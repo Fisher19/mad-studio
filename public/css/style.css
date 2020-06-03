@@ -27,6 +27,20 @@ h1, h2, h3{
     background-color: rgb(129, 167, 162);
 }
 
+#contact{
+    position: fixed;
+    z-index: 9999;
+}
+
+.close{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 5rem;
+    height: 5rem;
+    font-size: 4em;
+}
+
 .section-1{
     position: relative;
     height: 100vh;
@@ -118,7 +132,7 @@ h1, h2, h3{
     top: 50%;
     left: 90%;
     width: 65px;
-    z-index: 9999;
+    z-index: 9998;
     list-style-type: none;
 }
 .vNav ul {
@@ -162,6 +176,7 @@ h1, h2, h3{
     color: rgb(46, 46, 46);
     display: none;
 }
+
 
 
 
