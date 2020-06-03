@@ -9,7 +9,7 @@
     letter-spacing: 1px;
 } */
 
-.text-secondary{
+h1, h2, h3{
     color: white !important;
 }
 
@@ -27,12 +27,34 @@
     background-color: rgb(129, 167, 162);
 }
 
-#section-1{
+.section-1{
+    position: relative;
     height: 100vh;
-    overflow: hidden;
-    padding: 0;
-
 }
+
+.section-1-1{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.img-bg{
+    background: url(/images/background-1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bloc-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    min-height: 700px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -100;
+} 
 
 .section{
     display: table;
@@ -44,6 +66,15 @@
     overflow: hidden;
     padding: 0;
     color: rgb(212, 212, 212);
+}
+
+.bg-arguments{
+    background-color: rgb(129, 167, 162);
+}
+
+.card{
+    background-color: rgba(0, 0, 0, 0)!important;
+    border: none;
 }
 
 .row-no-margin{
@@ -79,4 +110,59 @@
 	height: 10px;
     width: 10px;
 }
+
+/*  */
+
+.vNav {
+    position: fixed;
+    top: 50%;
+    left: 90%;
+    width: 65px;
+    z-index: 9999;
+    list-style-type: none;
+}
+.vNav ul {
+    position: relative;
+}
+
+.vNav ul li {
+    padding-bottom: 20px;
+    color: rgb(46, 46, 46);
+}
+
+.vNav a {
+    display: block;
+    width: 15px;
+    height: 15px;
+    text-indent: -9999px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.vNav a:hover {
+    border-radius: 50%;
+    background-color: rgb(113, 135, 133);
+    text-decoration: none;
+}
+
+.vNav a.active {
+    border-radius: 50%;
+    background-color: rgb(207, 219, 218);
+    text-decoration: none;
+}
+
+.label {
+    top: -60%;
+    left: -200%;
+    width: 100%;
+    text-align: right;
+    font-size: 1em;
+    color: rgb(46, 46, 46);
+    display: none;
+}
+
+
+
 

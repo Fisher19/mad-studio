@@ -1,56 +1,37 @@
-<div class="container-fluid bg-primary section">
-    <div class="row row-no-margin">
+<div class="container-fluid bg-primary section par" id="section03">
+    <div class="row flex-column flex-lg-row row-no-margin">
         <div class="col-md-6 left-text">
             <div class="left-center-part">
-                <h2 class="text-secondary">Photographie</h2>
+                <h2>Photographie</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, debitis laborum ipsa soluta id ea ratione eos. Dolorem delectus est obcaecati, perferendis sint totam dolore et, repudiandae repellat, debitis minima.</p>
-                <div id="carousel-services" class="carousel slide" data-interval="6000" data-ride="carousel">
+                <div id="carousel-services" class="carousel slide" data-interval="5000" data-ride="carousel">
                     <ol class="bullets carousel-indicators">
-                        <li data-target="#carousel-services" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-services" data-slide-to="1" class=""></li>
-                        <li data-target="#carousel-services" data-slide-to="3" class=""></li>
+                    {% for photo in photos %}
+                        <li data-target="#carousel-services" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %} class="active" {% endif %}></li>                                           
+                    {% endfor %}
                     </ol>
+
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
+                    {% for photo in photos %}
+                        <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-lg-6 block-services">
+                                <div class="col-xs-12 col-sm-9 col-lg-9 block-services">
                                     <span class="icon-services"></span>
-                                    <h3 class="text-secondary">Packshot produit</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus molestiae, quod, nisi cumque accusamus doloribus eveniet minima itaque.</p>
-                                    <span><em> A partir de 250€</em></span>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-6 block-services">
-                                    <span class="icon-services"></span>
-                                    <h3 class="text-secondary">Portrait corporate</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus molestiae, quod, nisi cumque accusamus doloribus eveniet minima itaque.</p>
-                                    <span><em>A partir de 90€</em></span>
+                                    <h3>{{ photo.title }}</h3>
+                                    <p>{{ photo.content }}</p>
+                                    <span><em> A partir de {{ photo.price }}€</em></span>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-lg-6 block-services">
-                                    <span class="icon-services"></span>
-                                    <h3 class="text-secondary">Gestes et savoir-faire</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus molestiae, quod, nisi cumque accusamus doloribus eveniet minima itaque.</p>
-                                    <span><em>A partir de 250€</em></span>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-6 block-services">
-                                    <span class="icon-services"></span>
-                                    <h3 class="text-secondary">Reportage complet</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus molestiae, quod, nisi cumque accusamus doloribus eveniet minima itaque.</p>
-                                    <span><em>A partir de 450€</em></span>
-                                </div>
-                            </div>                            
-                        </div>
+                        </div>                       
+                    {% endfor %}
                     </div>
+
                     <div class="mt-3">
-                        <a class="carousel-control-left" href="#carousel-services" role="button" data-slide-to="prev">
+                        <a class="carousel-control-left" href="#carousel-services" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Précédent</span>
                         </a>
-                        <a class="carousel-control-right" href="#carousel-services" role="button" data-slide-to="next">
+                        <a class="carousel-control-right" href="#carousel-services" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Suivant</span>
                         </a>
@@ -59,7 +40,7 @@
             </div>            
         </div>
 
-        <!-- bloc droit -->
+        {# début galerie #}
         <div class="col-md-6 p-0 m-0">
             <div class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner bg-light">
@@ -75,5 +56,7 @@
                 </div>
             </div>
         </div>
+        {# fin galerie #}
+
     </div>
 </div>
