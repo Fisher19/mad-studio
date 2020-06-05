@@ -1,26 +1,73 @@
+{% form_theme form _self %}
 
 <div class="row" id="contact">
-    <div class="col-lg-6 ml-auto left-text bg-info">
+    <div class="col-lg-6 col-md-12 ml-auto left-text bloc-contact">
         <button type="button" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
             <div class="left-center-part text-center">
                 <h2>Contact</h2>
-                    <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Incidunt laboriosam magni minima, asperiores cupiditate culpa similique ex distinctio consequuntur quos vero officiis
-                    earum atque odit? Repellendus dolore consequatur incidunt ducimus!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Incidunt laboriosam magni minima, asperiores cupiditate culpa similique ex distinctio consequuntur quos vero officiis
-                    earum atque odit? Repellendus dolore consequatur incidunt ducimus!
-                    <br><br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Incidunt laboriosam magni minima, asperiores cupiditate culpa similique ex distinctio consequuntur quos vero officiis
-                    earum atque odit? Repellendus dolore consequatur incidunt ducimus!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Incidunt laboriosam magni minima, asperiores cupiditate culpa similique ex distinctio consequuntur quos vero officiis
-                    earum atque odit? Repellendus dolore consequatur incidunt ducimus!
-                    </p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est fugit rem quidem aliquid sapiente
+                ipsam corporis odio consequatur, tempore dolor ut, provident, quia consequuntur atque voluptas impedit corrupti ab. Eligendi?</p>
+                      
+        {% for label, messages in app.flashes %}
+            <div class="alert alert-{{ label }} text-center">
+                {% for message in messages %}
+                    <p>{{ message | raw }}</p>
+                {% endfor %}
             </div>
-        </div>
+        {% endfor %}
+
+        {{ form_start(form) }}
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    {{ form_label(form.lastname) }}                    
+                    {{ form_widget(form.lastname) }}
+                </div>
+                <div class="form-group col-md-6">
+                    {{ form_label(form.firstname) }}
+                    {{ form_widget(form.firstname) }}
+                </div>
+            </div>
+        
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    {{ form_label(form.compagny) }}
+                    {{ form_widget(form.compagny) }}
+                </div>
+                <div class="form-group col-md-6">
+                    {{ form_label(form.phone) }}
+                    {{ form_widget(form.phone) }}
+                </div>
+            </div>
+        
+            <div class="form-group">
+                {{ form_label(form.mail) }}
+                {{ form_widget(form.mail) }}
+            </div>
+        
+            <div class="form-group">
+                {{ form_label(form.message) }}
+                {{ form_widget(form.message) }}
+            </div>
+        
+            <div class="form-group">
+                {{ form_widget(form.checkmessage) }}
+            </div>
+            
+            {{ form_widget(form.submit) }}
+                
+    {{ form_end(form) }}
+
+            </div>
+    </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('.close').click(function() {
+            $('#contact').hide('slow');
+        });
+    });
+</script>
