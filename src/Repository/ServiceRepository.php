@@ -19,6 +19,9 @@ class ServiceRepository extends ServiceEntityRepository
         parent::__construct($registry, Service::class);
     }
 
+    /**
+     * Permet de récupérer tous les services Photographie
+     */
     public function findServicesPhoto()
     {
         return $this->createQueryBuilder('s')
@@ -27,6 +30,53 @@ class ServiceRepository extends ServiceEntityRepository
                     ->getResult();
     }
 
+    /**
+     * Permet de récupérer Produit & Packshot
+     */
+    public function findProduit()
+    {
+        return $this->createQueryBuilder('s')
+                    ->where('s.id = 1')
+                    ->getQuery()
+                    ->getResult();
+    }
+
+    /**
+     * Permet de récupérer Portrait corporate
+     */
+    public function findPortrait()
+    {
+        return $this->createQueryBuilder('s')
+                    ->where('s.id = 2')
+                    ->getQuery()
+                    ->getResult();
+    }
+
+        /**
+     * Permet de récupérer Savoir-faire
+     */
+    public function findSavoirFaire()
+    {
+        return $this->createQueryBuilder('s')
+                    ->where('s.id = 3')
+                    ->getQuery()
+                    ->getResult();
+    }
+
+    /**
+     * Permet de récupérer Reportage Complet
+     */
+    public function findReportageComplet()
+    {
+        return $this->createQueryBuilder('s')
+                    ->where('s.id = 4')
+                    ->getQuery()
+                    ->getResult();
+    }
+
+    /**
+     * Permet de récupérer tous les services Site Internet
+     */
     public function findServicesSite()
     {
         return $this->createQueryBuilder('s')
@@ -34,6 +84,51 @@ class ServiceRepository extends ServiceEntityRepository
                     ->getQuery()
                     ->getResult();
     }
+
+        /**
+     * Permet de récupérer Site vitrine
+     */
+    public function findVitrine()
+    {
+        return $this->createQueryBuilder('s')
+                    ->where('s.id = 5')
+                    ->getQuery()
+                    ->getResult();
+    }
+
+    /**
+     * Permet de récupérer Site E-commerce
+     */
+    public function findCommerce()
+    {
+        return $this->createQueryBuilder('s')
+                    ->where('s.id = 6')
+                    ->getQuery()
+                    ->getResult();
+    }
+
+        /**
+     * Permet de récupérer Refont design
+     */
+    public function findRefont()
+    {
+        return $this->createQueryBuilder('s')
+                    ->where('s.id = 7')
+                    ->getQuery()
+                    ->getResult();
+    }
+
+    /**
+     * Permet de récupérer Blog
+     */
+    public function findBlog()
+    {
+        return $this->createQueryBuilder('s')
+                    ->where('s.id = 8')
+                    ->getQuery()
+                    ->getResult();
+    }
+
 
     // /**
     //  * @return Service[] Returns an array of Service objects

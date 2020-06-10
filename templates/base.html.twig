@@ -6,21 +6,21 @@
 
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/js/main.js"></script>
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/style.css">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         {% include "/partials/header.html.twig" %}
-        {% include "/partials/contact.html.twig" %}
-        {% include "/partials/dotnav.html.twig" %}
+        {# {% include "/partials/dotnav.html.twig" %} #}
 
         {% block body %}
-        {% include "accueil.html.twig" %}
-        {% include "about.html.twig" %}
-        {% include "photo.html.twig" %}
-        {% include "site.html.twig" %}
-        {% include "arguments.html.twig" %}
+        {% include "/main/accueil.html.twig" %}
+        {% include "/main/edito.html.twig" %}
+        {% include "/main/photo.html.twig" %}
+        {% include "/main/site.html.twig" %}
+        {% include "/main/arguments.html.twig" %}
         {% endblock %}
 
         {% include "/partials/footer.html.twig" %}

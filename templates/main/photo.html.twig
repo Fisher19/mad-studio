@@ -1,0 +1,64 @@
+<div class="container-fluid bg-primary section par" id="section03">
+    <div class="row flex-column flex-lg-row row-no-margin">
+        <div class="col-md-6 left-text">
+            <div class="left-center-part">
+                <h2>Photographie</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, debitis laborum ipsa soluta id ea ratione eos. Dolorem delectus est obcaecati, perferendis sint totam dolore et, repudiandae repellat, debitis minima.</p>
+                <div id="carousel-services" class="carousel slide" data-interval="5000" data-ride="carousel">
+                    <div class="carousel-inner">
+                    {% for photo in photos %}
+                        <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-9 col-lg-9 block-services">
+                                    <span class="icon-services"></span>
+                                    <h3>{{ photo.title }}</h3>
+                                    <p>{{ photo.content }}</p>
+                                </div>
+                            </div>
+                        </div>                       
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="text-right mt-3">
+                    {# <ol class="bullets carousel-indicators">
+                    {% for photo in photos %}
+                        <li data-target="#carousel-services" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %} class="active" {% endif %}></li>                                           
+                    {% endfor %}
+                    </ol> #}
+                    <a class="carousel-control-left" href="#carousel-services" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Précédent</span>
+                    </a>
+                    <a class="carousel-control-right" href="#carousel-services" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Suivant</span>
+                    </a>
+                </div>
+
+                <div class="text-center">
+                    <a class="btn btn-success" href="" role="button">Découvrir</a>
+                </div>
+
+            </div>            
+        </div>
+
+        {# début galerie droite #}
+        <div class="col-md-6 p-0 m-0">
+            <div class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner bg-light">
+                    <div class="carousel-item active">
+                        <h4 class="d-flex align-items-center justify-content-center min-vh-100">slide 1</h4>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 class="d-flex align-items-center justify-content-center min-vh-100">slide 2</h4>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 class="d-flex align-items-center justify-content-center min-vh-100">slide 3</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# fin galerie droite #}
+
+    </div>
+</div>
