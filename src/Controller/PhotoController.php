@@ -17,17 +17,17 @@ class PhotoController extends AbstractController
     public function index(ServiceRepository $repo) : Response
     {
 
-        $portraits = $repo->findPortrait();
-        $produits = $repo->findProduit();
-        $maitrises = $repo->findSavoirFaire();
-        $reportages = $repo->findReportageComplet();
+        $portrait = $repo->findPortrait();
+        $produit = $repo->findProduit();
+        $maitrise = $repo->findSavoirFaire();
+        $reportage = $repo->findReportageComplet();
         
 
         return $this->render('/contents/prestations/photo.html.twig', [
-            'portraits' => $portraits,
-            'produits' => $produits,
-            'maitrises' => $maitrises,
-            'reportages' => $reportages
+            'portrait' => $portrait,
+            'produit' => $produit,
+            'maitrise' => $maitrise,
+            'reportage' => $reportage
         ]);
     }
 }

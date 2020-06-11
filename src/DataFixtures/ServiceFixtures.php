@@ -23,6 +23,7 @@ class ServiceFixtures extends Fixture
 
             $manager->persist($category);
         }
+        
 
         // Services fakés
         for ($j = 1; $j <= 8; $j++) {
@@ -36,6 +37,6 @@ class ServiceFixtures extends Fixture
 
             $manager->persist($service);
         }
-
+            
     }
 }

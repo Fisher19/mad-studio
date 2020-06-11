@@ -16,24 +16,12 @@
             </div>
         </div>
         <div class="col-lg-6 left-text text-center bg-about">
+        {% for edito in editos %}
             <div class="left-center-part">
-                <h2>Edito</h2>
-                <p class="p-about">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt laboriosam magni minima, asperiores cupiditate culpa similique ex distinctio consequuntur quos vero officiis
-                earum atque odit? Repellendus dolore consequatur incidunt ducimus!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt laboriosam magni minima, asperiores cupiditate culpa similique ex distinctio consequuntur quos vero officiis
-                earum atque odit? Repellendus dolore consequatur incidunt ducimus!
-                <br><br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt laboriosam magni minima, asperiores cupiditate culpa similique ex distinctio consequuntur quos vero officiis
-                earum atque odit? Repellendus dolore consequatur incidunt ducimus!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt laboriosam magni minima, asperiores cupiditate culpa similique ex distinctio consequuntur quos vero officiis
-                earum atque odit? Repellendus dolore consequatur incidunt ducimus!
-                </p>
+                <h2>{{ edito.title }}</h2>
+                <p class="p-about">{{ edito.content }}</p>
             </div>
+        {% endfor %}    
         </div>
     </div>
 </div>

@@ -5,15 +5,16 @@
 {% block body %}
 
     <div class="container-fluid bg-primary h-100">
-        <div class="text-center pt-5"><h2>{{ title }}</h2></div>
+    {% for about in about %}
+        <div class="text-center pt-5"><h2>{{ about.title }}</h2></div>
         <div class="row justify-content-center align-items-center h-100 mx-5">   
             <div class="col-6">
-                <p>{{ presentation }}</p>
+                <p>{{ about.presentation }}</p>
             </div>
             <div class="col-6">
-                <img src="#" alt="Autoportrait">
+                <img src="{{ about.image }}" alt="Autoportrait">
             </div>
         </div> 
-
+{% endfor %}
     </div>
 {% endblock %}

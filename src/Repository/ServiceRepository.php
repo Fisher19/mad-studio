@@ -25,18 +25,7 @@ class ServiceRepository extends ServiceEntityRepository
     public function findServicesPhoto()
     {
         return $this->createQueryBuilder('s')
-                    ->where('s.category = 7')
-                    ->getQuery()
-                    ->getResult();
-    }
-
-    /**
-     * Permet de récupérer Produit & Packshot
-     */
-    public function findProduit()
-    {
-        return $this->createQueryBuilder('s')
-                    ->where('s.id = 1')
+                    ->where('s.category = 23')
                     ->getQuery()
                     ->getResult();
     }
@@ -45,6 +34,17 @@ class ServiceRepository extends ServiceEntityRepository
      * Permet de récupérer Portrait corporate
      */
     public function findPortrait()
+    {
+        return $this->createQueryBuilder('s')
+                    ->where('s.id = 1')
+                    ->getQuery()
+                    ->getResult();
+    }
+
+    /**
+     * Permet de récupérer Produit & Packshot
+     */
+    public function findProduit()
     {
         return $this->createQueryBuilder('s')
                     ->where('s.id = 2')
@@ -80,7 +80,7 @@ class ServiceRepository extends ServiceEntityRepository
     public function findServicesSite()
     {
         return $this->createQueryBuilder('s')
-                    ->where('s.category = 8')
+                    ->where('s.category = 24')
                     ->getQuery()
                     ->getResult();
     }

@@ -6,12 +6,12 @@
 
 <div class="container pt-5">
     <h1 class="text-center pb-3">Un site sur-mesure pour la visibilité de votre entreprise sur internet.</h1>
-    {% for photo in vitrine %}
+    {% for site in vitrine %}
         <div class="row align-items-center m-5">
             <div class="col-6">
-                <h2>{{ photo.title }}</h2>
-                <p>{{ photo.content }}</p>
-                <span><em> A partir de {{ photo.price }}€</em></span>
+                <h2>{{ site.title }}</h2>
+                <p>{{ site.content }}</p>
+                <span><em> A partir de {{ site.price }}€</em></span>
                 <div class="mt-5">
                     <a class="btn btn-success" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
                 </div>
@@ -43,7 +43,7 @@
         </div>
     {% endfor %} 
 
-    {% for photo in ecommerce %}
+    {% for site in ecommerce %}
         <div class="row align-items-center m-5">
             <div class="col-6">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -69,9 +69,9 @@
                 </div>
             </div>
             <div class="col-6">
-                <h2>{{ photo.title }}</h2>
-                <p>{{ photo.content }}</p>
-                <span><em> A partir de {{ photo.price }}€</em></span>
+                <h2>{{ site.title }}</h2>
+                <p>{{ site.content }}</p>
+                <span><em> A partir de {{ site.price }}€</em></span>
                 <div class="mt-5">
                     <a class="btn btn-success" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
                 </div>
@@ -79,12 +79,12 @@
         </div>
     {% endfor %} 
 
-    {% for photo in refont %}
+    {% for site in refont %}
         <div class="row align-items-center m-5">
             <div class="col-6">
-                <h2>{{ photo.title }}</h2>
-                <p>{{ photo.content }}</p>
-                <span><em> A partir de {{ photo.price }}€</em></span>
+                <h2>{{ site.title }}</h2>
+                <p>{{ site.content }}</p>
+                <span><em> A partir de {{ site.price }}€</em></span>
                 <div class="mt-5">
                     <a class="btn btn-success" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
                 </div>
@@ -115,7 +115,7 @@
         </div>
     {% endfor %} 
 
-    {% for photo in blog %}
+    {% for site in blog %}
         <div class="row align-items-center m-5">
             <div class="col-6">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -141,9 +141,9 @@
                 </div>
             </div>
             <div class="col-6">
-                <h2>{{ photo.title }}</h2>
-                <p>{{ photo.content }}</p>
-                <span><em> A partir de {{ photo.price }}€</em></span>
+                <h2>{{ site.title }}</h2>
+                <p>{{ site.content }}</p>
+                <span><em> A partir de {{ site.price }}€</em></span>
                 <div class="mt-5">
                     <a class="btn btn-success" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
                 </div>
