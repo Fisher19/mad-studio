@@ -21,6 +21,7 @@
             <div class="left-center-part">
                 <h2>Création de site</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, debitis laborum ipsa soluta id ea ratione eos. Dolorem delectus est obcaecati, perferendis sint totam dolore et, repudiandae repellat, debitis minima.</p>
+                
                 <div id="carousel-services-2" class="carousel slide" data-interval="5000" data-ride="carousel">
                     {# <ol class="bullets carousel-indicators">
                     {% for site in sites %}
@@ -33,7 +34,9 @@
                         <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-9 col-lg-9 block-services">
-                                    <span class="icon-services"></span>
+                                    {% if site.icon %}
+                                    <span><img src="{{ vich_uploader_asset(site, 'iconFile') }}" alt="" class="icon-service"></span>
+                                    {% endif %}
                                     <h3>{{ site.title }}</h3>
                                     <p>{{ site.content }}</p>
                                     {# <span><em> A partir de {{ site.price }}€</em></span> #}
@@ -56,7 +59,7 @@
                 </div>
 
                 <div class="text-center">
-                    <a class="btn btn-success" href="" role="button">Découvrir</a>
+                    <a class="btn btn-service" href="{{ path('site_index') }}" role="button">Découvrir</a>
                 </div>
             </div>            
         </div>

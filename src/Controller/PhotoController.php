@@ -14,20 +14,28 @@ class PhotoController extends AbstractController
      * 
      * @return Response
      */
-    public function index(ServiceRepository $repo) : Response
+    public function index(ServiceRepository $repo)
     {
+        $photos = $repo->findServicesPhoto();
 
-        $portrait = $repo->findPortrait();
-        $produit = $repo->findProduit();
-        $maitrise = $repo->findSavoirFaire();
-        $reportage = $repo->findReportageComplet();
+        return $this->render(
+            '/contents/prestations/photo.html.twig', 
+            [ 
+                'photos' => $photos
+            ]
+        );
+
+        // $portrait = $repo->findPortrait();
+        // $produit = $repo->findProduit();
+        // $maitrise = $repo->findSavoirFaire();
+        // $reportage = $repo->findReportageComplet();
         
 
-        return $this->render('/contents/prestations/photo.html.twig', [
-            'portrait' => $portrait,
-            'produit' => $produit,
-            'maitrise' => $maitrise,
-            'reportage' => $reportage
-        ]);
+        // return $this->render('/contents/prestations/photo.html.twig', [
+        //     'portrait' => $portrait,
+        //     'produit' => $produit,
+        //     'maitrise' => $maitrise,
+        //     'reportage' => $reportage
+        // ]);
     }
 }

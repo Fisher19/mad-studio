@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container-fluid p-5 h-100 bg-success">
+        <h2>Editer le service : "{{ service.title }}"</h2>
+        {{ include ('admin/prestations/_form.html.twig', {form: form, button: 'Editer'}) }}
+    </div>
+
+{% endblock %}

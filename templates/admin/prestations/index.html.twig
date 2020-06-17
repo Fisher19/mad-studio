@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Interface d'administration{% endblock %}
+
+{% block body %}
+    <div class="container-fluid p-5 bg-warning">
+        <h1>Gérer les services</h1>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Titre</th>
+                        <th>Icon</th>
+                        <th>Catégorie</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for service in services %}
+                    <tr>
+                        <td>{{ service.title }}</td>
+                        <td>
+                        {% if service.icon %}
+                            <img src="{{ vich_uploader_asset(service, 'iconFile') }}" alt="icon" class="icon-admin">
+                        {% endif %}
+                        </td>
+                        <td>{{ service.category }}</td>
+                        <td>
+                            <a href="{{ path('admin.prestations.edit', {id: service.id}) }}" class="btn btn-dark">Editer</a>                       
+                            <form method="post" action="{{ path('admin.prestations.delete', {id: service.id}) }}"
+                            style="display:inline-block" onsubmit="return confirm('Confirmer la suppression')">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ service.id) }}">
+                                <button class="btn btn-danger">Supprimer</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="text-right">
+                <a href="{{ path('admin.prestations.new') }}" class="btn btn-dark">Créer un nouveau service</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

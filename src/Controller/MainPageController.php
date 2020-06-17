@@ -24,7 +24,7 @@ class MainPageController extends AbstractController
         ->getRepository(Edito::class)
         ->findAll();
 
-        // appel des blocs services Photo et Site
+        // appel des blocs Services Photo et Site
         $photos = $repo->findServicesPhoto();
         $sites = $repo->findServicesSite();
 

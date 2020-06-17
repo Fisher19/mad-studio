@@ -98,4 +98,15 @@ class Category
 
         return $this;
     }
+
+    /**
+     * Converti category_id en string dans le form ServiceType - Administration
+     * 
+     */
+    public function __toString(){
+        // retourne le nom de la catégorie
+        return $this->title;
+        // retourne l'id de la catégorie
+        // return $this->id;
+    }
 }

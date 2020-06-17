@@ -9,6 +9,7 @@
         "fzaninotto/faker": "^1.9",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "5.0.*",
+        "symfony/cache": "5.0.*",
         "symfony/console": "5.0.*",
         "symfony/dotenv": "5.0.*",
         "symfony/expression-language": "5.0.*",
@@ -32,14 +33,16 @@
         "symfony/web-link": "5.0.*",
         "symfony/webpack-encore-bundle": "^1.7",
         "symfony/webpack-encore-pack": "^1.0",
-        "symfony/yaml": "5.0.*"
+        "symfony/yaml": "5.0.*",
+        "vich/uploader-bundle": "^1.14"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.3",
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "*",
-        "symfony/test-pack": "*"
+        "symfony/test-pack": "*",
+        "symfony/web-server-bundle": "^4.4.2"
     },
     "config": {
         "preferred-install": {

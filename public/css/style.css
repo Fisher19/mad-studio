@@ -9,6 +9,10 @@ h1, h2, h3 {
     color: white;
 }
 
+.bloc-contact{
+    background-color: rgb(155, 196, 188);
+}
+
 /* Menu */
 .navbar{
     font-size: 1rem;
@@ -24,6 +28,11 @@ h1, h2, h3 {
 
 a .nav-link{
     color: white;
+}
+
+.nav-item{
+    margin-right: 2rem;
+    text-transform: uppercase;
 }
 
 .navbar-toggler{
@@ -136,7 +145,7 @@ a .nav-link{
 } 
 
 .section{
-    /* display: table; */
+    display: table;
     position: relative;
     table-layout: fixed;
     left: 0;
@@ -147,7 +156,7 @@ a .nav-link{
     color: rgb(235, 235, 235);
 }
 
-.bg-about{
+.bg-edito{
     background-image: url(/images/forme-kraft-17.png), url(/images/forme-kraft-18.png);
     background-size: 80%, 60%;
     background-position: left bottom, 110% 10%;
@@ -155,7 +164,7 @@ a .nav-link{
     color: black;
 }
 
-.p-about{
+.p-edito{
     background-color: rgb(241, 241, 241);
     padding: 30px;
 }
@@ -182,7 +191,6 @@ a .nav-link{
     position: relative;
     height: 100vh;
     padding: 0 5%;
-    text-align: left;
 }
 
 .left-center-part{
@@ -239,13 +247,13 @@ a .nav-link{
 
 .vNav a:hover {
     border-radius: 50%;
-    background-color: rgb(113, 135, 133);
+    background-color: rgb(155, 196, 188);
     text-decoration: none;
 }
 
 .vNav a.active {
     border-radius: 50%;
-    background-color: rgb(207, 219, 218);
+    background-color: rgb(155, 196, 188);
     text-decoration: none;
 }
 
@@ -259,7 +267,18 @@ a .nav-link{
     display: none;
 }
 
+.btn-service{
+    background-color: rgb(155, 196, 188);
+    color: white;
+}
 
+.icon-service{
+    max-width: 20%;
+    max-height: 20%;
+}
 
-
-
+/* ADMINISTRATION */
+.icon-admin{
+    max-width: 65px;
+    max-height: 65px;
+}

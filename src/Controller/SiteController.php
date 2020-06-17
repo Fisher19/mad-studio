@@ -17,17 +17,25 @@ class SiteController extends AbstractController
     public function index(ServiceRepository $repo) : Response
     {
 
-        $vitrine = $repo->findVitrine();
-        $ecommerce = $repo->findCommerce();
-        $refont = $repo->findRefont();
-        $blog = $repo->findBlog();
+        $sites = $repo->findServicesPhoto();
+
+        return $this->render(
+            '/contents/prestations/site.html.twig', 
+            [ 
+                'sites' => $sites
+            ]
+        );
+        // $vitrine = $repo->findVitrine();
+        // $ecommerce = $repo->findCommerce();
+        // $refont = $repo->findRefont();
+        // $blog = $repo->findBlog();
         
 
-        return $this->render('/contents/prestations/site.html.twig', [
-            'vitrine' => $vitrine,
-            'ecommerce' => $ecommerce,
-            'refont' => $refont,
-            'blog' => $blog
-        ]);
+        // return $this->render('/contents/prestations/site.html.twig', [
+        //     'vitrine' => $vitrine,
+        //     'ecommerce' => $ecommerce,
+        //     'refont' => $refont,
+        //     'blog' => $blog
+        // ]);
     }
 }
