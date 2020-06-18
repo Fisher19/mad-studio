@@ -277,8 +277,17 @@ a .nav-link{
     max-height: 20%;
 }
 
+.icon-argument{
+    max-width: 30%;
+    max-height: 30%;
+}
+
 /* ADMINISTRATION */
 .icon-admin{
     max-width: 65px;
     max-height: 65px;
+}
+
+.table-responsive{
+    overflow-y: scroll;
 }

@@ -9,7 +9,9 @@
         {% for argument in arguments %}
             <div class="card-deck my-2">
                 <div class="card text-center">
-                    <img src="{{ argument.icon }}" class="card-img-top w-50 mx-auto pt-4" alt="..." alt="Card image cap">
+                    {% if argument.icon %}
+                    <img src="{{ vich_uploader_asset(argument, 'iconFile') }}" class="card-img-top w-50 mx-auto pt-4 icon-argument" alt="..." alt="Card image cap">
+                    {% endif %}
                     <div class="card-body p-0 d-flex align-items-stretch flex-column">
                         <h2 class="card-title py-4">{{ argument.title }}</h2>
                         <p class="card-text">{{ argument.content }}</p>

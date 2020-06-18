@@ -1,10 +1,10 @@
-{% extends "base.html.twig" %}
+{% extends "admin/base.html.twig" %}
 
 {% block body %}
 
     <div class="container-fluid h-100 bg-info p-5">
         <h2>Créer un nouveau service</h2>
-        {{ include ('admin/prestations/_form.html.twig', {form: form, button: 'Créer'}) }}
+        {{ include ('admin/content/prestations/_form.html.twig', {form: form, button: 'Créer'}) }}
     </div>
 
 {% endblock %}

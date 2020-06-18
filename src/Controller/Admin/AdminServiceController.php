@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class AdminController extends AbstractController
+class AdminServiceController extends AbstractController
 {
     /**
      *
@@ -33,14 +33,14 @@ class AdminController extends AbstractController
     /**
      * Permet d'afficher les différents services
      * 
-     * @Route("/admin", name="admin.prestations.index")
+     * @Route("/admin/content/prestations", name="admin_prestations_index")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index()
     {
         $services = $this->repository->findAll();
 
-        return $this->render('admin/prestations/index.html.twig', [
+        return $this->render('admin/content/prestations/index.html.twig', [
             'services' => $services,
         ]);
     }
@@ -48,7 +48,7 @@ class AdminController extends AbstractController
     /**
      * Permet de créer un nouveau service
      * 
-     * @Route("/admin/service/create", name="admin.prestations.new")
+     * @Route("/admin/content/prestations/create", name="admin_prestations_new")
      *
      * @return void
      */
@@ -66,10 +66,10 @@ class AdminController extends AbstractController
                 "Le service '{$service->getTitle()}' a bien été créé !"
             );
 
-            return $this->redirectToRoute('admin.prestations.index');
+            return $this->redirectToRoute('admin_prestations_index');
         }
 
-        return $this->render('admin/prestations/new.html.twig', [
+        return $this->render('admin/content/prestations/new.html.twig', [
             'service' => $service,
             'form' => $form->createView()
         ]);
@@ -78,7 +78,7 @@ class AdminController extends AbstractController
     /**
      * Permet d'éditer les différents services
      * 
-     * @Route("/admin/service/{id}/edit", name="admin.prestations.edit")
+     * @Route("/admin/content/prestations/{id}/edit", name="admin_prestations_edit")
      * 
      * @param Service $service
      * @param Request $request
@@ -97,10 +97,10 @@ class AdminController extends AbstractController
                 "Le service '{$service->getTitle()}' a bien été modifié !"
             );
 
-            return $this->redirectToRoute('admin.prestations.index');
+            return $this->redirectToRoute('admin_prestations_index');
         }
 
-        return $this->render('admin/prestations/edit.html.twig', [
+        return $this->render('admin/content/prestations/edit.html.twig', [
             'service' => $service,
             'form' => $form->createView()
         ]);
@@ -109,7 +109,7 @@ class AdminController extends AbstractController
     /**
      * Permet de supprimer un service
      *
-     * @Route("/admin/service/{id}/delete", name="admin.prestations.delete", methods="DELETE")
+     * @Route("/admin/content/prestations/{id}/delete", name="admin_prestations_delete", methods="DELETE")
      * 
      * @param Service $service
      * @param Request $request
@@ -126,7 +126,7 @@ class AdminController extends AbstractController
                 "Le service '{$service->getTitle()}' a bien été supprimé !"
             );
         }
-        return $this->redirectToRoute('admin.prestations.index');
+        return $this->redirectToRoute('admin_prestations_index');
     }
 
 }

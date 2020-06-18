@@ -1,0 +1,56 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Gestion des services{% endblock %}
+
+{% block body %}
+    <div class="container p-5">
+        <h4>Gérer les services</h4>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+            <table class="table table-sm table-hover table-bordered">
+                <thead class="thead-dark text-center">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Icon</th>
+                        <th>Catégorie</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                {% for service in services %}
+                    <tr>
+                        <td class="align-middle">{{ service.title }}</td>
+                        <td class="align-middle">
+                        {% if service.icon %}
+                            <img src="{{ vich_uploader_asset(service, 'iconFile') }}" alt="icon" class="icon-admin">
+                        {% endif %}
+                        </td>
+                        <td class="align-middle">{{ service.category }}</td>
+                        <td class="align-middle">
+                            <a href="{{ path('admin_prestations_edit', {id: service.id}) }}" class="btn btn-dark">
+                                <i class="fas fa-edit my-1"></i>
+                            </a>                       
+                            <form method="post" action="{{ path('admin_prestations_delete', {id: service.id}) }}"
+                            style="display:inline-block" onsubmit="return confirm('Confirmer la suppression')">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ service.id) }}">
+                                <button class="btn btn-danger my-1">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="text-center">
+                <a href="{{ path('admin_prestations_new') }}" class="btn btn-dark">Créer un nouveau service</a>
+            </div>
+
+    </div>
+{% endblock %}

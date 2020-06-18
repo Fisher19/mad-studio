@@ -2,11 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\ArgumentRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArgumentRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ArgumentRepository::class)
+ * @Vich\Uploadable()
  */
 class Argument
 {
@@ -31,6 +35,17 @@ class Argument
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $icon;
+
+    /**
+     * @Vich\UploadableField(mapping="icon_argument", fileNameProperty="icon")
+     * @var File|null
+     */
+    private $iconFile;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updated_at;
 
     public function getId(): ?int
     {
@@ -61,14 +76,38 @@ class Argument
         return $this;
     }
 
-    public function getIcon(): ?string
+    public function setIconFile(File $iconFile = null)
+    {
+        $this->iconFile = $iconFile;
+        if ($this->iconFile instanceof UploadedFile) {
+            $this->updated_at = new \DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getIconFile()
+    {
+        return $this->iconFile;
+    }
+
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
+    }
+
+    public function getIcon()
     {
         return $this->icon;
     }
 
-    public function setIcon(?string $icon): self
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
-        $this->icon = $icon;
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

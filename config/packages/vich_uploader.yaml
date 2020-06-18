@@ -6,6 +6,10 @@ vich_uploader:
             uri_prefix: /resources/icons/prestations
             upload_destination: '%kernel.project_dir%/public/resources/icons/prestations'
 
+        icon_argument:
+            uri_prefix: /resources/icons/arguments
+            upload_destination: '%kernel.project_dir%/public/resources/icons/arguments'        
+
         # service_gallery:
         #     uri_prefix: /images/services/gallery
         #     upload_destination: '%kernel.project_dir%/public/images/services/gallery'    

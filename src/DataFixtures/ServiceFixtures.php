@@ -25,18 +25,18 @@ class ServiceFixtures extends Fixture
         }
         
 
-        // Services fakés
-        for ($j = 1; $j <= 8; $j++) {
-            $service = new Service();
+        // // Services fakés
+        // for ($j = 1; $j <= 8; $j++) {
+        //     $service = new Service();
 
-            $service->setTitle($faker->sentence())
-                    ->setContent($faker->text(200))
-                    ->setIcon($faker->imageUrl(30, 30))
-                    ->setPrice(mt_rand(90, 2000))
-                    ->setCategory($category);
+        //     $service->setTitle($faker->sentence())
+        //             ->setContent($faker->text(200))
+        //             ->setIcon($faker->imageUrl(30, 30))
+        //             ->setPrice(mt_rand(90, 2000))
+        //             ->setCategory($category);
 
-            $manager->persist($service);
-        }
+        //     $manager->persist($service);
+        // }
             
     }
 }
