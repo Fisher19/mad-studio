@@ -9,12 +9,13 @@
         <div class="text-center pt-5"><h2>{{ about.title }}</h2></div>
         <div class="row justify-content-center align-items-center h-100 mx-5">   
             <div class="col-6">
-                <p>{{ about.presentation }}</p>
+                <p>{{ about.presentation|raw }}</p>
             </div>
             <div class="col-6">
                 <img src="{{ about.image }}" alt="Autoportrait">
             </div>
         </div> 
-{% endfor %}
+    {% endfor %}
     </div>
+    
 {% endblock %}

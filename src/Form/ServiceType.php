@@ -6,6 +6,7 @@ use App\Entity\Service;
 use App\Entity\Category;
 use App\Form\GalleryType;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,7 +18,7 @@ class ServiceType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('content')
+            ->add('content', CKEditorType::class)
             ->add('price')
             ->add('category', EntityType::class, [
                 'class' => Category::class,

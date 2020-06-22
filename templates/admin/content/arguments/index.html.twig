@@ -20,7 +20,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody class="text-center">
+                <tbody>
                 {% for argument in arguments %}
                     <tr>
                         <td class="align-middle">{{ argument.title }}</td>
@@ -29,7 +29,7 @@
                             <img src="{{ vich_uploader_asset(argument, 'iconFile') }}" alt="icon" class="icon-admin">
                         {% endif %}
                         </td>
-                        <td class="align-middle">{{ argument.content }}</td>
+                        <td class="align-middle">{{ argument.content|raw }}</td>
                         <td class="align-middle">
                             <a href="{{ path('admin_arguments_edit', {id: argument.id}) }}" class="btn btn-dark">
                                 <i class="fas fa-edit my-1"></i>

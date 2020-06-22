@@ -5,10 +5,6 @@ body, html{
     height: 100%;
 }
 
-h1, h2, h3 {
-    color: white;
-}
-
 .bloc-contact{
     background-color: rgb(155, 196, 188);
 }
@@ -37,6 +33,10 @@ a .nav-link{
 
 .navbar-toggler{
     padding: 20px 15px;
+}
+
+.dropdown-toggle{
+    cursor: pointer;
 }
 
 .animated-icon1{
@@ -110,9 +110,6 @@ a .nav-link{
     transform: rotate(-135deg);
     }
 
-.dropdown-toggle{
-    cursor: pointer;
-}
 /* Fin Menu */
 
 .section-1{
@@ -120,13 +117,13 @@ a .nav-link{
     height: 100vh;
 }
 
-.section-1-1{
+/* .section-1-1{
     box-sizing: border-box;
     margin: 0;
-}
+} */
 
 .img-bg{
-    background: url(/images/background-1.jpg);
+    background: url(/images/fond-kraft-1-2.png);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -140,7 +137,7 @@ a .nav-link{
     height: 100%;
     width: 100%;
     min-height: 700px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: -100;
 } 
 
@@ -156,17 +153,16 @@ a .nav-link{
     color: rgb(235, 235, 235);
 }
 
+#bloc-edito{
+    background-color: rgb(199, 199, 199);
+    padding: 30px;
+}
+
 .bg-edito{
     background-image: url(/images/forme-kraft-17.png), url(/images/forme-kraft-18.png);
     background-size: 80%, 60%;
     background-position: left bottom, 110% 10%;
     background-repeat: no-repeat, no-repeat;
-    color: black;
-}
-
-.p-edito{
-    background-color: rgb(241, 241, 241);
-    padding: 30px;
 }
 
 .bg-arguments{
@@ -177,16 +173,11 @@ a .nav-link{
     color: black;
 }
 
-.card{
-    background-color: rgba(0, 0, 0, 0)!important;
-    border: none;
-}
-
 .row-no-margin{
     margin: 0;
 }
 
-.left-text{
+/* .left-text{
     display: table;
     position: relative;
     height: 100vh;
@@ -196,8 +187,10 @@ a .nav-link{
 .left-center-part{
     display: table-cell;
     vertical-align: middle;
-}
+} */
 
+
+/* MAIN SERVICES */
 .carousel-indicators{
     margin-right: 0;
     left: auto;
@@ -205,19 +198,27 @@ a .nav-link{
 
 .block-services{
     margin-top: 10vh;
+    min-height: 200px;
 }
 
-.bullets li {
-    border-radius: 1000px;
-	border: medium none;
-	cursor: pointer;
-	height: 10px;
-    width: 10px;
+.btn-service{
+    background-color: rgb(155, 196, 188);
+    color: white;
 }
 
-/*  */
+.icon-service{
+    max-width: 20%;
+    max-height: 20%;
+}
 
-.vNav {
+.icon-argument{
+    max-width: 30%;
+    max-height: 30%;
+}
+
+/* DOTNAV VERTICALE */
+
+/* .vNav {
     position: fixed;
     top: 50%;
     left: 90%;
@@ -265,22 +266,7 @@ a .nav-link{
     font-size: 1em;
     color: rgb(46, 46, 46);
     display: none;
-}
-
-.btn-service{
-    background-color: rgb(155, 196, 188);
-    color: white;
-}
-
-.icon-service{
-    max-width: 20%;
-    max-height: 20%;
-}
-
-.icon-argument{
-    max-width: 30%;
-    max-height: 30%;
-}
+} */
 
 /* ADMINISTRATION */
 .icon-admin{

@@ -1,0 +1,22 @@
+{% extends "_base.html.twig" %}
+
+{% block title %}Page non trouvée{% endblock %}
+
+{% block body %}
+
+<div class="container d-flex h-100">
+    <div class="row align-self-center">
+        <div class="col-md-9">
+            <h1>Oups!</h1>
+            <h2>Le page que vous recherchez n'existe pas.</h2>
+            <p>Erreur {{ status_code }}</p>
+
+            <a class="btn btn-service mt-5" href="{{ path('main_page') }}" role="button">
+                <i class="fas fa-arrow-circle-left"></i>
+                Retour au site
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

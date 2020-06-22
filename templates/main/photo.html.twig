@@ -16,7 +16,7 @@
                                     <span><img src="{{ vich_uploader_asset(photo, 'iconFile') }}" alt="" class="icon-service"></span>
                                     {% endif %}
                                     <h3>{{ photo.title }}</h3>
-                                    <p>{{ photo.content }}</p>
+                                    <p>{{ photo.content|raw }}</p>
                                 </div>
                             </div>
                         </div>                       

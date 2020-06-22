@@ -2,12 +2,16 @@
 
 {% block body %}
 
-    <div class="container-fluid p-5 h-100 bg-success">
-        <h2>Editer : "{{ edito.title }}"</h2>
+    <div class="container p-5">
+        <h4>Editer : "{{ edito.title }}"</h4>
 
         {{ form_start(form) }}
             {{ form_rest(form) }}
             <button class="btn btn-primary">{{ button|default('Enregistrer') }}</button>    
+            <a href="{{ path('admin_edito_index')}}" class="btn btn-link">
+                <i class="fas fa-arrow-circle-left"></i>
+                Retour
+            </a>
         {{ form_end(form) }}
         
     </div>

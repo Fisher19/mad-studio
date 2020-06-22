@@ -10,7 +10,7 @@
         <div class="row align-items-center m-5">
             <div class="col-6">
                 <h2>{{ photo.title }}</h2>
-                <p>{{ photo.content }}</p>
+                <p>{{ photo.content|raw }}</p>
                 <span><em> A partir de {{ photo.price }}€</em></span>
                 <div class="mt-5">
                     <a class="btn btn-success" href="{{ path('contact_index') }}" role="button">Demander un devis</a>

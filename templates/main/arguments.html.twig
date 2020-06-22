@@ -8,13 +8,13 @@
         <div class="row d-flex justify-content-between mx-5 row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
         {% for argument in arguments %}
             <div class="card-deck my-2">
-                <div class="card text-center">
+                <div class="card">
                     {% if argument.icon %}
                     <img src="{{ vich_uploader_asset(argument, 'iconFile') }}" class="card-img-top w-50 mx-auto pt-4 icon-argument" alt="..." alt="Card image cap">
                     {% endif %}
-                    <div class="card-body p-0 d-flex align-items-stretch flex-column">
-                        <h2 class="card-title py-4">{{ argument.title }}</h2>
-                        <p class="card-text">{{ argument.content }}</p>
+                    <div class="card-body px-3 d-flex align-items-stretch flex-column">
+                        <h2 class="card-title">{{ argument.title }}</h2>
+                        <p class="card-text">{{ argument.content|raw }}</p>
                     </div>
                 </div>
             </div>
