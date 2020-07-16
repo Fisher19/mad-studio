@@ -4,11 +4,11 @@
 
 {% block body %}
 
-<div class="container pt-5">
-    <h1 class="text-center pb-3">Des images de qualité auront un impact indéniable quant à l'image de votre entreprise</h1>
+<div class="container bloc-content" id="photo-container">
+    <h1 class="text-center pb-5">Des images de qualité auront un impact indéniable quant à l'image de votre entreprise</h1>
     {% for photo in photos %}
-        <div class="row align-items-center m-5">
-            <div class="col-6">
+        <div class="p-5 {% if loop.index is divisible by(2) %} d-flex flex-row-reverse {% else %} row {% endif %}">
+            <div class="col-lg-6">
                 <h2>{{ photo.title }}</h2>
                 <p>{{ photo.content|raw }}</p>
                 <span><em> A partir de {{ photo.price }}€</em></span>
@@ -16,8 +16,7 @@
                     <a class="btn btn-success" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
                 </div>
             </div>
-
-            <div class="col-6">
+            <div class="col-lg-6">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">

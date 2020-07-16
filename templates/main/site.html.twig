@@ -1,67 +1,80 @@
-<div class="container-fluid bg-primary section par" id="section04">
-    <div class="row flex-column-reverse flex-lg-row row-no-margin">
-        {# début galerie #}
-        <div class="col-md-6 p-0 m-0">
-            <div class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner bg-light">
-                    <div class="carousel-item active">
-                        <h4 class="d-flex align-items-center justify-content-center min-vh-100">slide 1</h4>
-                    </div>
-                    <div class="carousel-item">
-                        <h4 class="d-flex align-items-center justify-content-center min-vh-100">slide 2</h4>
-                    </div>
-                    <div class="carousel-item">
-                        <h4 class="d-flex align-items-center justify-content-center min-vh-100">slide 3</h4>
+<section id="site">
+    <div class="container-fluid" id="section04">
+        <div class="row row-services">
+            {# début galerie #}
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">
+    
+                <div id="carousel-main-site" class="carousel slide carousel" data-ride="carousel">    
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-main-site" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-main-site" data-slide-to="1"></li>
+                        <li data-target="#carousel-main-site" data-slide-to="2"></li>
+                    </ol>
+    
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="img-slide-1 d-flex min-vh-100"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="img-slide-2 d-flex min-vh-100"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="img-slide-3 d-flex min-vh-100"></div>
+                        </div>
                     </div>
                 </div>
+    
             </div>
-        </div>
-        {# fin galerie #}
-        <div class="col-md-6 left-text section par">
-            <div class="left-center-part">
+            {# fin galerie #}
+    
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 container-services">
+    
                 <h2>Création de site</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, debitis laborum ipsa soluta id ea ratione eos. Dolorem delectus est obcaecati, perferendis sint totam dolore et, repudiandae repellat, debitis minima.</p>
-                
-                <div id="carousel-services-2" class="carousel slide" data-interval="5000" data-ride="carousel">
-                    {# <ol class="bullets carousel-indicators">
-                    {% for site in sites %}
-                        <li data-target="#carousel-services-2" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %} class="active" {% endif %}></li>                                           
-                    {% endfor %}
-                    </ol> #}
-
+        
+                <div id="carousel-services-2" class="carousel slide content-carousel" data-interval="5000" data-ride="carousel">
+                {# <ol class="bullets carousel-indicators">
+                {% for site in sites %}
+                    <li data-target="#carousel-services-2" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %} class="active" {% endif %}></li>                                           
+                {% endfor %}
+                </ol> #}
+    
                     <div class="carousel-inner">
                     {% for site in sites %}
                         <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-9 col-lg-9 block-services">
+                            <div class="row bloc-services">
+                                <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
                                     {% if site.icon %}
                                     <span><img src="{{ vich_uploader_asset(site, 'iconFile') }}" alt="" class="icon-service"></span>
                                     {% endif %}
                                     <h3>{{ site.title }}</h3>
-                                    <p>{{ site.content|raw }}</p>
+                                    <p>{{ site.intro|raw }}</p>
                                     {# <span><em> A partir de {{ site.price }}€</em></span> #}
                                 </div>
                             </div>
                         </div>                       
                     {% endfor %}
                     </div>
+    
+                    <div class="row arrow-control-services">
+                        <a class="carousel-control-left" href="#carousel-services-2" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Précédent</span>
+                        </a>
+                        <a class="carousel-control-right" href="#carousel-services-2" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Suivant</span>
+                        </a>
+                    </div>
+
                 </div>
 
-                <div class="text-right mt-3">
-                    <a class="carousel-control-left" href="#carousel-services-2" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Précédent</span>
-                    </a>
-                    <a class="carousel-control-right" href="#carousel-services-2" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Suivant</span>
-                    </a>
+                <div class="text-center btn-decouvrir">
+                    <a class="btn btn-success" href="{{ path('site_index') }}" role="button">Découvrir</a>
                 </div>
-
-                <div class="text-center">
-                    <a class="btn btn-service" href="{{ path('site_index') }}" role="button">Découvrir</a>
-                </div>
+    
             </div>            
+
         </div>
     </div>
-</div>
+</section>

@@ -1,25 +1,36 @@
-<div class="container-fluid bg-arguments section par" id="section05">
-    <div class="row text-center align-items-center justify-content-center">
-        <div class="col-9">
-            <h1>Parce que mon travail est de mettre le votre en avant.</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi consequatur iusto odit asperiores beatae ex reprehenderit voluptates. At, et? Commodi nam similique, reiciendis iste voluptatem veniam laudantium voluptate delectus nesciunt?</p>
-        </div>
-
-        <div class="row d-flex justify-content-between mx-5 row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+{# <div class="container-fluid bg-arguments section par p-4">
+    <h3 class="text-center mt-5  mb-0">Pourquoi MAD Studio ?</h3>
+	<div class="row d-flex justify-content-around row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 m-4">
         {% for argument in arguments %}
-            <div class="card-deck my-2">
-                <div class="card">
-                    {% if argument.icon %}
-                    <img src="{{ vich_uploader_asset(argument, 'iconFile') }}" class="card-img-top w-50 mx-auto pt-4 icon-argument" alt="..." alt="Card image cap">
-                    {% endif %}
-                    <div class="card-body px-3 d-flex align-items-stretch flex-column">
-                        <h2 class="card-title">{{ argument.title }}</h2>
-                        <p class="card-text">{{ argument.content|raw }}</p>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-        </div>
+		<div class="card-deck">
+			<div class="card">
+				<img src="{{ vich_uploader_asset(argument, 'iconFile') }}" class="card-img-top mx-auto pt-2 icon-argument" alt="...">
+				<div class="card-body d-flex align-items-stretch flex-column">
+					<h5 class="card-title bg-default text-center formuleTitre">{{ argument.title }}</h5>
+                    <p class="card-text">{{ argument.content|raw }}</p>
+				</div>
+			</div>
+		</div>
+        {% endfor %}  
     </div>
+</div> #}
 
-</div>
+<section id="arguments" class="test-arguments">
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Pourquoi MAD Studio ?</h1>
+				<p>Parce que mon travail est de mettre le votre en avant !</p>
+			</div>
+			{% for argument in arguments %}
+			<div class="col-md-3">
+				<img src="{{ vich_uploader_asset(argument, 'iconFile') }}" class="icon-argument" alt="...">
+				<h5 class="text-center">{{ argument.title }}</h5>
+                <p>{{ argument.content|raw }}</p>
+			</div>
+			{% endfor %}
+		</div>
+
+	</div>
+</section>
+

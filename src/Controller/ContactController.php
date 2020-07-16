@@ -30,7 +30,7 @@ class ContactController extends AbstractController
                ->setTo('maddev1919@gmail.com')
                ->setBody(
                    $this->renderView(
-                       'message.html.twig',
+                       'contents/contact/message.html.twig',
                        ['contact' => $contact]
                    ),
                    'text/html'
@@ -44,7 +44,7 @@ class ContactController extends AbstractController
                "Votre message à bien été envoyé !"
            );  
        
-           return $this->redirectToRoute('main_page', ['_fragment' => 'contact']);
+           return $this->redirectToRoute('contact_index', ['_fragment' => 'contact']);
         }
        
                return $this->render('contents/contact/contact.html.twig', [

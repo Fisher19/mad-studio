@@ -1,7 +1,28 @@
 $(document).ready(function() {
     // icon burger
-    $('.navbar-toggler').on('click', function () {  
+
+    $('.navbar-toggler').on('click', function () {
         $('.animated-icon1').toggleClass('open');
+    });
+        
+
+    // $(window).on("load", function(){
+    //     var fenetre = $(window).height();
+    //     var section1=$("#section01").offset().top;
+    //     var section2=$("#section02").offset().top;
+    //     var section3=$("#section03").offset().top;
+    //     var section4=$("#section04").offset().top;
+    //     var section5=$("#section05").offset().top;
+    //     var section=$('.section').offset().top;
+
+    //     $(window).scroll(function(){
+    //         $('.section').each(function(){
+    //             if ($(document).scrollTop() >= section ) {
+    //                 $('html, body').animate({scrollTop: $('#section02').offset().top }, 'slow');  
+    //             }
+    //         });
+    //     });
+
     });
 
     // opacity bg header au scroll
@@ -73,7 +94,7 @@ $(document).ready(function() {
     //     $(this).addClass('active');
     // });
 
-});
+
 
 
 

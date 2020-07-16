@@ -59,6 +59,11 @@ class Service
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $intro;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -144,6 +149,18 @@ class Service
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getIntro(): ?string
+    {
+        return $this->intro;
+    }
+
+    public function setIntro(string $intro): self
+    {
+        $this->intro = $intro;
 
         return $this;
     }

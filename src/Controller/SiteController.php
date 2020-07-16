@@ -17,7 +17,7 @@ class SiteController extends AbstractController
     public function index(ServiceRepository $repo) : Response
     {
 
-        $sites = $repo->findServicesPhoto();
+        $sites = $repo->findServicesSite();
 
         return $this->render(
             '/contents/prestations/site.html.twig', 

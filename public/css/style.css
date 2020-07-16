@@ -3,40 +3,199 @@ body, html{
     padding: 0;
     width: 100%;
     height: 100%;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight:300;
 }
 
-.bloc-contact{
-    background-color: rgb(155, 196, 188);
+@media (max-width: 768px) {
+    #accueil {
+        text-align: center;
+    }
+
+    #accueil a .fa{
+        padding-top: 50px;
+    }
+
+    #edito {
+        text-align: center;       
+    }
+
+    #edito img{
+        padding: 10%;
+    }
+
+    #arguments{
+    padding: 5rem 0;    
+    }
+
+    #arguments{
+        display: block;
+        overflow: visible;
+        padding: 10rem 0;
+    }
+
+    .row-services-reverse{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
 }
 
-/* Menu */
-.navbar{
-    font-size: 1rem;
+
+.container-fluid{
+    margin: 0;
 }
 
-.navbar-light .navbar-toggler{
-    border: none;
+.test {
+    display: flex;
+    align-items: center;
+    overflow-y: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar-light .navbar-nav .nav-link{
-    color: rgb(255, 255, 255);
+#accueil{
+    background: url(/images/fond-kraft-1-2.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: white;
+    padding-top: 300px;
 }
 
-a .nav-link{
+#accueil a .fa{
+    color: white;
+    padding-top: 220px;
+}
+
+#accueil a .fa:hover{
+    color: #1a1a1a;
+}
+
+#edito{
+    padding: 30px;
+    background-color: rgb(233, 233, 233);
+    text-align: justify;
+}
+
+#arguments{
+    padding: 10rem 0;
+}
+
+#arguments img{
+    padding: 15px 0;
+}
+
+/* PHOTO & SITE */
+.container-services{
+    padding: 130px 100px;
+}
+
+.row-services{
+    background-color: rgb(26,26,26);
     color: white;
 }
 
-.nav-item{
-    margin-right: 2rem;
+.bloc-services{
+    height: 200px;
+    width: auto;
+    margin-top: 50px;
+}
+
+.arrow-control-services{
+    padding-top: 5px;
+    float: right;
+}
+
+.icon-service{
+    max-width: 10vh;
+    max-height: 10vh;
+}
+
+.btn-success{
+    background-color: rgb(132, 173, 165);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0;
+    color: rgb(26,26,26);
+}
+
+.btn-success:hover, .btn-success:active{
+    background-color: rgb(84, 110, 105);
+}
+
+.btn-decouvrir{
+    margin-top: 60px;
+}
+
+.img-slide-1{
+    background: url(/images/img-1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.img-slide-2{
+    background: url(/images/img-2.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.img-slide-3{
+    background: url(/images/img-3.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.carousel .carousel-indicators li{
+    width: .625rem;
+    height: .625rem;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.bloc-contact{
+    position: relative;
+    height: 100vh;
+    padding: 150px 25px;
+}
+
+.bg-contact{
+    background-color: rgb(155, 196, 188);
+}
+
+.bloc-content{
+    padding-top: 20vh;
+}
+
+
+
+/* Menu */
+
+.navbar{
+    background-color: rgb(255, 255, 255)
+}
+
+.navbar .navbar-nav .nav-link{
+    color: #1a1a1a;
+    padding: 0 40px;
     text-transform: uppercase;
 }
 
-.navbar-toggler{
-    padding: 20px 15px;
+.navbar .navbar-nav .nav-link:hover{
+    color: #494949;
 }
 
-.dropdown-toggle{
-    cursor: pointer;
+.navbar-brand{
+    width: 80px;
+    height: 80px;
+    padding: 0;
 }
 
 .animated-icon1{
@@ -74,7 +233,7 @@ a .nav-link{
     }
     
     .animated-icon1 span {
-    background: #ffffff;
+    background: rgb(26,26,26);
     }
     
     .animated-icon1 span:nth-child(1) {
@@ -112,58 +271,14 @@ a .nav-link{
 
 /* Fin Menu */
 
-.section-1{
+
+/* .section{
     position: relative;
-    height: 100vh;
-}
-
-/* .section-1-1{
-    box-sizing: border-box;
-    margin: 0;
-} */
-
-.img-bg{
-    background: url(/images/fond-kraft-1-2.png);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.bloc-overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
     width: 100%;
-    min-height: 700px;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: -100;
-} 
-
-.section{
-    display: table;
-    position: relative;
-    table-layout: fixed;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     padding: 0;
-    color: rgb(235, 235, 235);
-}
-
-#bloc-edito{
-    background-color: rgb(199, 199, 199);
-    padding: 30px;
-}
-
-.bg-edito{
-    background-image: url(/images/forme-kraft-17.png), url(/images/forme-kraft-18.png);
-    background-size: 80%, 60%;
-    background-position: left bottom, 110% 10%;
-    background-repeat: no-repeat, no-repeat;
-}
+} */
 
 .bg-arguments{
     background-image: url(/images/forme-kraft-17.png), url(/images/forme-kraft-17-2.png), url(/images/forme-kraft-18.png);
@@ -177,43 +292,19 @@ a .nav-link{
     margin: 0;
 }
 
-/* .left-text{
-    display: table;
-    position: relative;
-    height: 100vh;
-    padding: 0 5%;
-}
-
-.left-center-part{
-    display: table-cell;
-    vertical-align: middle;
-} */
-
 
 /* MAIN SERVICES */
-.carousel-indicators{
-    margin-right: 0;
-    left: auto;
-}
-
-.block-services{
-    margin-top: 10vh;
-    min-height: 200px;
-}
-
-.btn-service{
-    background-color: rgb(155, 196, 188);
-    color: white;
-}
-
-.icon-service{
-    max-width: 20%;
-    max-height: 20%;
-}
 
 .icon-argument{
-    max-width: 30%;
-    max-height: 30%;
+    max-width: 12vh;
+    margin: auto;
+}
+
+.card{
+    height: auto;
+    margin: 50px 20px;
+    padding: 0px 20px;
+    text-align: center;
 }
 
 /* DOTNAV VERTICALE */
@@ -268,6 +359,9 @@ a .nav-link{
     display: none;
 } */
 
+
+
+
 /* ADMINISTRATION */
 .icon-admin{
     max-width: 65px;
@@ -277,3 +371,4 @@ a .nav-link{
 .table-responsive{
     overflow-y: scroll;
 }
+

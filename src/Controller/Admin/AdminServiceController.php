@@ -34,7 +34,7 @@ class AdminServiceController extends AbstractController
      * Permet d'afficher les différents services
      * 
      * @Route("/admin/content/prestations", name="admin_prestations_index")
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      */
     public function index()
     {
@@ -82,7 +82,7 @@ class AdminServiceController extends AbstractController
      * 
      * @param Service $service
      * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      */
     public function edit(Service $service, Request $request)
     {
@@ -114,7 +114,7 @@ class AdminServiceController extends AbstractController
      * @param Service $service
      * @param Request $request
      * @param EntityManagerInterface $manager
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @return RedirectResponse
      */
     public function delete(Service $service, Request $request, EntityManagerInterface $manager) {
         if ($this->isCsrfTokenValid('delete' . $service->getId(), $request->get('_token'))) {

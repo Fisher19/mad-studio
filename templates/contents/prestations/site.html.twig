@@ -4,10 +4,10 @@
 
 {% block body %}
 
-<div class="container pt-5">
+<div class="container bloc-content">
     <h1 class="text-center pb-3">Un site sur-mesure pour la visibilité de votre entreprise sur internet.</h1>
     {% for site in sites %}
-        <div class="row align-items-center m-5">
+        <div class="{% if loop.index is divisible by(2) %} d-flex flex-row-reverse {% else %} row {% endif %}">
             <div class="col-6">
                 <h2>{{ site.title }}</h2>
                 <p>{{ site.content|raw }}</p>

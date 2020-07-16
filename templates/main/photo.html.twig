@@ -1,63 +1,76 @@
-<div class="container-fluid bg-primary section par" id="section03">
-    <div class="row flex-column flex-lg-row row-no-margin">
-        <div class="col-md-6 left-text">
-        
-            <div class="left-center-part">
+<section id="photographie">
+    <div class="container-fluid" id="section03">
+        <div class="row row-services row-services-reverse">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 container-services">        
+
                 <h2>Photographie</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, debitis laborum ipsa soluta id ea ratione eos. Dolorem delectus est obcaecati, perferendis sint totam dolore et, repudiandae repellat, debitis minima.</p>
-                
+
                 <div id="carousel-services" class="carousel slide" data-interval="5000" data-ride="carousel">
                     <div class="carousel-inner">
                     {% for photo in photos %}
                         <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-9 col-lg-9 block-services">
+                            <div class="row bloc-services">
+                                <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
                                     {% if photo.icon %}
                                     <span><img src="{{ vich_uploader_asset(photo, 'iconFile') }}" alt="" class="icon-service"></span>
                                     {% endif %}
                                     <h3>{{ photo.title }}</h3>
-                                    <p>{{ photo.content|raw }}</p>
+                                    <p>{{ photo.intro|raw }}</p>
                                 </div>
                             </div>
                         </div>                       
                     {% endfor %}
                     </div>
-                </div>
 
-                <div class="text-right">
-                    <a class="carousel-control-left" href="#carousel-services" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Précédent</span>
-                    </a>
-                    <a class="carousel-control-right" href="#carousel-services" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Suivant</span>
-                    </a>
-                </div>
-                <div class="text-center mt-5">
-                    <a class="btn btn-service" href="{{ path('photo_index') }}" role="button">Découvrir</a>
-                </div>
 
-            </div>            
-        </div>
-
-        {# début galerie droite #}
-        <div class="col-md-6 p-0 m-0">
-            <div class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner bg-light">
-                    <div class="carousel-item active">
-                        <h4 class="d-flex align-items-center justify-content-center min-vh-100">slide 1</h4>
+                    <div class="row arrow-control-services">
+                        <a class="carousel-control left align-self-center" href="#carousel-services" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Précédent</span>
+                        </a>
+                        <a class="carousel-control right" href="#carousel-services" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Suivant</span>
+                        </a>
                     </div>
-                    <div class="carousel-item">
-                        <h4 class="d-flex align-items-center justify-content-center min-vh-100">slide 2</h4>
-                    </div>
-                    <div class="carousel-item">
-                        <h4 class="d-flex align-items-center justify-content-center min-vh-100">slide 3</h4>
+
+                </div>
+
+
+                <div class="text-center btn-decouvrir">
+                    <a class="btn btn-success" href="{{ path('photo_index') }}" role="button">Découvrir</a>
+                </div>    
+
+            </div>
+
+
+            {# début galerie droite #}
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">
+
+                <div id="carousel-main-photo" class="carousel slide carousel" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-main-photo" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-main-photo" data-slide-to="1"></li>
+                        <li data-target="#carousel-main-photo" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="img-slide-1 d-flex min-vh-100"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="img-slide-2 d-flex min-vh-100"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="img-slide-3 d-flex min-vh-100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {# fin galerie droite #}
+            {# fin galerie droite #}
 
+        </div>
     </div>
-</div>
+</section>

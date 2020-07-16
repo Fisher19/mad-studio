@@ -18,6 +18,7 @@ class ServiceType extends AbstractType
     {
         $builder
             ->add('title')
+            ->add('intro', CKEditorType::class)
             ->add('content', CKEditorType::class)
             ->add('price')
             ->add('category', EntityType::class, [
