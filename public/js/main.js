@@ -1,6 +1,5 @@
 $(document).ready(function() {
     // icon burger
-
     $('.navbar-toggler').on('click', function () {
         $('.animated-icon1').toggleClass('open');
     });

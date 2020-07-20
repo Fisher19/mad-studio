@@ -1,46 +1,52 @@
 <section id="photographie">
     <div class="container-fluid" id="section03">
         <div class="row row-services row-services-reverse">
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 container-services">        
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">        
 
-                <h2>Photographie</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, debitis laborum ipsa soluta id ea ratione eos. Dolorem delectus est obcaecati, perferendis sint totam dolore et, repudiandae repellat, debitis minima.</p>
+                <div class="container-services">
+                    <h2>Photographie</h2>
+                    <p class="lead">Des images de qualité auront un impact indéniable <br>
+                                    pour vous démarquer.
+                    </p>
+                    <p>
+                        Afin de vous aider dans la communication de votre entreprise, je réalise les visuels qui viendront alimenter votre site internet, vos réseaux sociaux et supports divers.
+                    </p>
 
-                <div id="carousel-services" class="carousel slide" data-interval="5000" data-ride="carousel">
-                    <div class="carousel-inner">
-                    {% for photo in photos %}
-                        <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-                            <div class="row bloc-services">
-                                <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                    {% if photo.icon %}
-                                    <span><img src="{{ vich_uploader_asset(photo, 'iconFile') }}" alt="" class="icon-service"></span>
-                                    {% endif %}
-                                    <h3>{{ photo.title }}</h3>
-                                    <p>{{ photo.intro|raw }}</p>
+                    <div id="carousel-services" class="carousel slide" data-interval="5000" data-ride="carousel">
+                        <div class="carousel-inner">
+                        {% for photo in photos %}
+                            <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+                                <div class="row bloc-services">
+                                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                                        {% if photo.icon %}
+                                        <span><img src="{{ vich_uploader_asset(photo, 'iconFile') }}" alt="" class="icon-service"></span>
+                                        {% endif %}
+                                        <h3>{{ photo.title }}</h3>
+                                        <p>{{ photo.intro|raw }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>                       
-                    {% endfor %}
-                    </div>
+                            </div>                       
+                        {% endfor %}
+                        </div>
 
 
-                    <div class="row arrow-control-services">
-                        <a class="carousel-control left align-self-center" href="#carousel-services" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Précédent</span>
-                        </a>
-                        <a class="carousel-control right" href="#carousel-services" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Suivant</span>
-                        </a>
+                        <div class="row arrow-control-services">
+                            <a class="carousel-control left align-self-center" href="#carousel-services" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="carousel-control right" href="#carousel-services" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Suivant</span>
+                            </a>
+                        </div>
+                    </div> 
+
+                    <div class="text-center mt-5">
+                        <a class="btn btn-success" href="{{ path('photo_index') }}" role="button">Découvrir</a>
                     </div>
 
                 </div>
-
-
-                <div class="text-center btn-decouvrir">
-                    <a class="btn btn-success" href="{{ path('photo_index') }}" role="button">Découvrir</a>
-                </div>    
 
             </div>
 

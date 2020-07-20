@@ -1,3 +1,81 @@
-<footer class="bg-primary py-5 text-center">
-    <p>Copyright MAD Studio 2020</p>
+{% set route_name = app.request.attributes.get('_route') %}
+<footer class="page-footer">
+
+    <div class="container text-center text-md-left py-4 ">
+
+        <div class="row mt-5">  
+
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-3"> 
+
+                <h6 class="text-uppercase font-weight-bold">MAD STUDIO</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                  consectetur
+                  adipisicing elit.
+                </p> 
+
+                <div class="mb-4">
+                    <button class="btn rs mr-3">
+                        <i class="fab fa-facebook-f"> </i>
+                    </button>
+                    <button class="btn rs mr-3">
+                        <i class="fab fa-linkedin-in"> </i>
+                    </button>
+                    <button class="btn rs mr-3">
+                        <i class="fab fa-instagram"> </i>
+                    </button>        
+                </div> 
+
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4"> 
+                <h6 class="text-uppercase font-weight-bold">SERVICES</h6>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto">
+                <p>
+                    <a href="{{ path('photo_index') }}">Photographie</a>
+                </p>
+                <p>
+                    <a href="{{ path('site_index') }}">Site internet</a>
+                </p>
+                <p>
+                    <a href="{{ path('pack_index') }}">Full Pack</a>
+                </p>    
+            </div>
+
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4"> 
+                <h6 class="text-uppercase font-weight-bold">LIENS</h6>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto">
+                <p>
+                    <a href="#!">Mentions Légales</a>
+                </p>
+                <p>
+                    <a href="#!">Questions / Réponses (FAQ)</a>
+                </p>    
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4"> 
+                <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto">
+                <p>
+                  <i class="fas fa-home mr-3"></i> 06000 Nice - FRANCE
+                </p>
+                <p>
+                  <i class="fas fa-envelope mr-3"></i> contact@madstudio.fr
+                </p>
+                <p>
+                  <i class="fas fa-phone mr-3"></i> 06 59 82 67 77
+                </p>    
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-copyright text-center py-3">
+        © Copyright 2020
+        <a href="https://madstudio.fr/"> madstudio.fr</a>
+        - Tous droits réservés
+    </div>
+
 </footer>
+

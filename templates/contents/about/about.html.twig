@@ -4,22 +4,20 @@
 
 {% block body %}
 
-    <div class="container-fluid bg-primary">
+<section id="about" class="container-fix">
     {% for about in about %}
-        <div class="d-flex justify-content-around align-items-center h-100">
-            <div class="text-center">
-                <h2 class="white-text">{{ about.title }}</h2>
+    <div class="container mt-5">
+        <h1 class="text-center pb-5">{{ about.title }}</h1>
+        <div class="row">
+            <div class="col-md-6 text-center m-auto">
+                <img src="{{ about.image }}" alt="Autoportrait" class="img-fluid">
             </div>
-            <div class="row">   
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <p>{{ about.presentation|raw }}</p>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <img src="{{ about.image }}" alt="Autoportrait">
-                </div>
-            </div> 
-    {% endfor %}
+            <div class="col-md-6">
+                <p>{{ about.presentation|raw }}</p>
+            </div>
         </div>
     </div>
-    
+    {% endfor %}
+</section>
+   
 {% endblock %}
