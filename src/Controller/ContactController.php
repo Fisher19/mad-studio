@@ -4,45 +4,49 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\MailerInterface;
 
 class ContactController extends AbstractController
 {
     /**
-     * @Route("/contents/contact", name="contact_index")
+     * @Route("/contact", name="contact_index")
      * @return Response
      */
-    public function index(Request $request, EntityManagerInterface $manager, \Swift_Mailer $mailer)
+    public function index(Request $request, EntityManagerInterface $manager, MailerInterface $mailer)
     {
-               // création du formulaire de contact
-               $contact = new Contact();
-               $form = $this->createForm(ContactType::class, $contact);
-               $form->handleRequest($request);
+        // création du formulaire de contact
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
        
-               if($form->isSubmitted() && $form->isValid()) {
-                   $manager->persist($contact);
-                   $manager->flush();
+        if($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($contact);
+            $manager->flush();
+        
+            $message = (new TemplatedEmail())
+            ->from($contact->getMail('mail'))
+            ->to('maddev1919@gmail.com')
+            ->subject('Contact depuis le site')
+            ->htmlTemplate('contents/contact/message.html.twig')
+            ->context([
+                'lastname' => $contact->getLastname(),
+                'firstname' => $contact->getFirstname(),
+                'compagny' => $contact->getCompagny(),
+                'phone' => $contact->getPhone(),
+                'mail' => $contact->getMail(),
+                'message' => $contact->getMessage()
+            ]);
+            
+        $mailer->send($message);
        
-               $message = (new \Swift_Message('Demande de contact'))
-               ->setFrom('send@example.com')
-               ->setTo('maddev1919@gmail.com')
-               ->setBody(
-                   $this->renderView(
-                       'contents/contact/message.html.twig',
-                       ['contact' => $contact]
-                   ),
-                   'text/html'
-               )
-           ;
-       
-           $mailer->send($message);
-       
-           $this->addFlash(
-               'success',
-               "Votre message à bien été envoyé !"
-           );  
+        $this->addFlash(
+            'success',
+            "Votre message à bien été envoyé !"
+        );  
        
            return $this->redirectToRoute('contact_index', ['_fragment' => 'contact']);
         }

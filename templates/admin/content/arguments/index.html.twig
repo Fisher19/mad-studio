@@ -23,14 +23,14 @@
                 <tbody>
                 {% for argument in arguments %}
                     <tr>
-                        <td class="align-middle">{{ argument.title }}</td>
-                        <td class="align-middle">
+                        <td class="align-middle px-3">{{ argument.title }}</td>
+                        <td class="align-middle px-3">
                         {% if argument.icon %}
                             <img src="{{ vich_uploader_asset(argument, 'iconFile') }}" alt="icon" class="icon-admin">
                         {% endif %}
                         </td>
-                        <td class="align-middle">{{ argument.content|raw }}</td>
-                        <td class="align-middle">
+                        <td class="align-middle px-3">{{ argument.content|raw }}</td>
+                        <td class="align-middle px-3">
                             <a href="{{ path('admin_arguments_edit', {id: argument.id}) }}" class="btn btn-dark">
                                 <i class="fas fa-edit my-1"></i>
                             </a>                       

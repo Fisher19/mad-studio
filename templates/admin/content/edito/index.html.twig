@@ -21,8 +21,8 @@
                 <tbody>
                 {% for edito in edito %}
                     <tr>
-                        <td class="align-middle">{{ edito.content|raw }}</td>
-                        <td class="align-middle">
+                        <td class="align-middle p-3">{{ edito.content|raw }}</td>
+                        <td class="align-middle p-3">
                             <a href="{{ path('admin_edito_edit', {id: edito.id}) }}" class="btn btn-dark">
                                 <i class="fas fa-edit my-1"></i>
                             </a>                       

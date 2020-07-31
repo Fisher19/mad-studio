@@ -1,9 +1,9 @@
 <div class="container">
     <h1>Nouveau message depuis le site MAD STUDIO</h1>
-    <p>{{ contact.lastname }}</p>
-    <p>{{ contact.firstname }}</p>
-    <p>{{ contact.compagny}}</p>
-    <p>{{ contact.phone }}</p>
-    <p>{{ contact.mail }}</p>
-    <p>{{ contact.message }}</p>
+    <p> <strong>Nom :</strong> {{ lastname }}</p>
+    <p> <strong>Prénom :</strong> {{ firstname }}</p>
+    <p> <strong>Entreprise :</strong> {{ compagny }}</p>
+    <p> <strong>Téléphone :</strong> {{ phone }}</p>
+    <p> <strong>Mail :</strong> {{ mail }}</p>
+    <p> <strong>Message :</strong> {{ message|raw }}</p>
 </div>

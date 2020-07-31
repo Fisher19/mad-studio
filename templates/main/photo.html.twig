@@ -1,27 +1,25 @@
-<section id="photographie">
-    <div class="container-fluid" id="section03">
+<section class="section section3">
+    <div class="container-fluid">
         <div class="row row-services row-services-reverse">
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">        
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">        
 
                 <div class="container-services">
-                    <h2>Photographie</h2>
-                    <p class="lead">Des images de qualité auront un impact indéniable <br>
-                                    pour vous démarquer.
-                    </p>
+                    <h1>Photographie</h1>
+                    <p class="lead">Des images professionnelles de qualité <br> pour vous démarquer. </p>
                     <p>
                         Afin de vous aider dans la communication de votre entreprise, je réalise les visuels qui viendront alimenter votre site internet, vos réseaux sociaux et supports divers.
                     </p>
 
-                    <div id="carousel-services" class="carousel slide" data-interval="5000" data-ride="carousel">
+                    <div id="carousel-services" class="carousel" data-interval="5000" data-ride="carousel">
                         <div class="carousel-inner">
                         {% for photo in photos %}
                             <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-                                <div class="row bloc-services">
+                                <div class="row bloc-services test">
                                     <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
                                         {% if photo.icon %}
                                         <span><img src="{{ vich_uploader_asset(photo, 'iconFile') }}" alt="" class="icon-service"></span>
                                         {% endif %}
-                                        <h3>{{ photo.title }}</h3>
+                                        <h2>{{ photo.title }}</h2>
                                         <p>{{ photo.intro|raw }}</p>
                                     </div>
                                 </div>

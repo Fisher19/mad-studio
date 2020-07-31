@@ -4,27 +4,35 @@
         <meta charset="UTF-8">
         <title>MAD Studio - {% block title %}Bienvenue!{% endblock %}</title>
 
-        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/js/main.js"></script>
+        <script type="text/javascript" src="vendors/scrolloverflow.min.js"></script>
+        <script src="/js/fullpage.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="/css/fullpage.css" type="text/css">
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/fontawesome/css/all.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/style.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+
         {% include "/partials/header.html.twig" %}
-        {# {% include "/partials/dotnav.html.twig" %} #}
 
         {% block body %}
-        {% include "/main/accueil.html.twig" %}
-        {% include "/main/edito.html.twig" %}
-        {% include "/main/photo.html.twig" %}
-        {% include "/main/site.html.twig" %}
-        {% include "/main/arguments.html.twig" %}
+        <div id="fullpage">
+            {% include "/main/accueil.html.twig" %}
+            {% include "/main/photo.html.twig" %}
+            {% include "/main/edito.html.twig" %}
+            {% include "/main/site.html.twig" %}
+            {% include "/main/arguments.html.twig" %}
+            {% include "/partials/footer.html.twig" %}
+        </div>
         {% endblock %}
 
         {% include "/partials/footer.html.twig" %}
+
 
         <script src="/js/jquery.min.js"></script>
         <script src="/js/popper.min.js"></script>

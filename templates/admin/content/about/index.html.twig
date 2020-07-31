@@ -21,8 +21,8 @@
                 <tbody>
                 {% for about in about %}
                     <tr>
-                        <td class="align-middle">{{ about.presentation|raw }}</td>
-                        <td class="align-middle">
+                        <td class="align-middle p-3">{{ about.presentation|raw }}</td>
+                        <td class="align-middle p-3">
                             <a href="{{ path('admin_about_edit', {id: about.id}) }}" class="btn btn-dark">
                                 <i class="fas fa-edit my-1"></i>
                             </a>                       

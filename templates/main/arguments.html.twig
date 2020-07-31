@@ -1,24 +1,18 @@
-<section id="arguments">
-	<div class="container text-center">
-		<div class="row">
-			<div class="col-md-12">
-				<h1>Pourquoi MAD Studio ?</h1>
-				<p>Parce que mon travail est de mettre le votre en avant !</p>
-			</div>
+<section id="arguments" class="section section5">
+	<div class="container pt-5">
+  		<div class="mx-md-5">
+    		<div class="row d-flex justify-content-center">
+      			<h1 class="font-weight-bold pb-4">Titre ?</h1>
+    		</div>
+    		<div class="row text-center mt-4">
 			{% for argument in arguments %}
-			<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-				<div class="card-deck">
-					<div class="card">
-						<img src="{{ vich_uploader_asset(argument, 'iconFile') }}" class="card-img-top icon-argument" alt="...">
-						<div class="card-body d-flex align-items-stretch flex-column pt-0">
-							<h5 class="card-title text-center mb-0">{{ argument.title }}</h5>
-            	    	    <p class="card-text">{{ argument.content|raw }}</p>
-						</div>
-				</div>
-			</div>
-
-			</div>
+      			<div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        			<img src="{{ vich_uploader_asset(argument, 'iconFile') }}" class="icon-argument" alt="...">
+        			<h3 class="mb-4">{{ argument.title }}</h3>
+        			<p class="px-2 mb-lg-0">{{ argument.content|raw }}</p>
+      			</div>
 			{% endfor %}
+			</div>
 		</div>
 	</div>
 </section>

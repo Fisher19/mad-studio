@@ -1,79 +1,79 @@
-<section id="site">
-    <div class="container-fluid" id="section04">
-        <div class="row row-services">
+<section class="section section4">
+    <div class="container-fluid">
+        <div class="row row-services">     
+
             {# début galerie #}
             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">
-    
+
                 <div id="carousel-main-site" class="carousel slide carousel" data-ride="carousel">    
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-main-site" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-main-site" data-slide-to="1"></li>
                         <li data-target="#carousel-main-site" data-slide-to="2"></li>
                     </ol>
-    
+
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <div class="img-slide-1 d-flex min-vh-100"></div>
+                            <div class="img-slide-4 d-flex min-vh-100"></div>
                         </div>
                         <div class="carousel-item">
-                            <div class="img-slide-2 d-flex min-vh-100"></div>
+                            <div class="img-slide-5 d-flex min-vh-100"></div>
                         </div>
                         <div class="carousel-item">
-                            <div class="img-slide-3 d-flex min-vh-100"></div>
+                            <div class="img-slide-6 d-flex min-vh-100"></div>
                         </div>
                     </div>
                 </div>
-    
             </div>
             {# fin galerie #}
-    
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 container-services">
-    
-                <h2>Création de site</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, debitis laborum ipsa soluta id ea ratione eos. Dolorem delectus est obcaecati, perferendis sint totam dolore et, repudiandae repellat, debitis minima.</p>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">
+                
+                <div class="container-services">
         
-                <div id="carousel-services-2" class="carousel slide content-carousel" data-interval="5000" data-ride="carousel">
-                {# <ol class="bullets carousel-indicators">
-                {% for site in sites %}
-                    <li data-target="#carousel-services-2" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %} class="active" {% endif %}></li>                                           
-                {% endfor %}
-                </ol> #}
-    
-                    <div class="carousel-inner">
-                    {% for site in sites %}
-                        <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-                            <div class="row bloc-services">
-                                <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                    {% if site.icon %}
-                                    <span><img src="{{ vich_uploader_asset(site, 'iconFile') }}" alt="" class="icon-service"></span>
-                                    {% endif %}
-                                    <h3>{{ site.title }}</h3>
-                                    <p>{{ site.intro|raw }}</p>
-                                    {# <span><em> A partir de {{ site.price }}€</em></span> #}
+                    <h1>Création de site</h1>
+                    <p class="lead">Améliorer la visibilité de votre entreprise sur internet.</p>
+                    <p>
+                    8 clients sur 10 déclarent avoir recours à Internet pour se renseigner avant d’acheter un produit ou un service.
+                    </p>
+
+                    <div id="carousel-services-2" class="carousel" data-interval="5000" data-ride="carousel">
+                        <div class="carousel-inner">
+                        {% for site in sites %}
+                            <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+                                <div class="row bloc-services test">
+                                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                                        {% if site.icon %}
+                                        <span><img src="{{ vich_uploader_asset(site, 'iconFile') }}" alt="" class="icon-service"></span>
+                                        {% endif %}
+                                        <h2>{{ site.title }}</h2>
+                                        <p>{{ site.intro|raw }}</p>
+                                        {# <span><em> A partir de {{ site.price }}€</em></span> #}
+                                    </div>
                                 </div>
-                            </div>
-                        </div>                       
-                    {% endfor %}
+                            </div>                       
+                        {% endfor %}
+                        </div>
+
+                        <div class="row arrow-control-services">
+                            <a class="carousel-control-left" href="#carousel-services-2" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="carousel-control-right" href="#carousel-services-2" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Suivant</span>
+                            </a>
+                        </div>
                     </div>
-    
-                    <div class="row arrow-control-services">
-                        <a class="carousel-control-left" href="#carousel-services-2" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Précédent</span>
-                        </a>
-                        <a class="carousel-control-right" href="#carousel-services-2" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Suivant</span>
-                        </a>
+
+                    <div class="text-center mt-5">
+                        <a class="btn btn-success" href="{{ path('site_index') }}" role="button">Découvrir</a>
                     </div>
 
                 </div>
-
-                <div class="text-center btn-decouvrir">
-                    <a class="btn btn-success" href="{{ path('site_index') }}" role="button">Découvrir</a>
-                </div>
     
-            </div>            
+            </div>  
 
         </div>
     </div>

@@ -1,15 +1,21 @@
-<section id="edito" class="container-fix">
+<section id="edito" class="section section2">
     <div class="container">
     {% for edito in editos %}
         <div class="row">
-            <div class="col-md-6 m-auto">
-                <img src="/images/img-edito.png" alt="" class="img-fluid">
+            <div class="col-lg-8" id="bloc-edito">
+                {# <h1 class="text-center">{{ edito.title }}</h1> #}
+                <h4>{{ edito.content|raw }}</h4>
             </div>
-            <div class="col-md-6">
-                <h1 class="text-center my-3">{{ edito.title }}</h1>
-                <p>{{ edito.content|raw }}</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4">
             </div>
         </div>
     </div>
     {% endfor %}
 </section>
+    
