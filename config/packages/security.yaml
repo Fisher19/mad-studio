@@ -16,8 +16,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
-            
+            anonymous: true           
             provider: from_database    
 
             form_login: 
@@ -28,6 +27,7 @@ security:
             logout:
                 path: logout
                 target: login
+
 
             # provider: users_in_memory
 

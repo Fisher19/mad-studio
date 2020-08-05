@@ -3,9 +3,9 @@
 {% block title %}Full Pack{% endblock %}
 
 {% block body %}
-
-<div class="container bloc-content">
-    <h1 class="text-center pb-3">Des images de qualité auront un impact indéniable quant à l'image de votre entreprise</h1>
+<section id="pack" class="section-fix">
+  <div class="container">
+    <h1 class="text-center mb-5">Title</h1>
     {% for pack in pack %}
     <div class="row align-items-center m-5">
         <div class="col-6">
@@ -41,6 +41,6 @@
         </div>
     </div>
     {% endfor %} 
-</div>
-
+  </div>
+</section>
 {% endblock %}

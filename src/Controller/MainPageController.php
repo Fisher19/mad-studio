@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Argument;
-use App\Entity\Edito;
 use App\Repository\ServiceRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\Request;
 
 class MainPageController extends AbstractController
 {
@@ -16,13 +17,23 @@ class MainPageController extends AbstractController
      * 
      * @return Response
      */
-    public function index(ServiceRepository $repo) : Response
+    public function index(ServiceRepository $repo, Request $request) : Response
     {
-        // appel du bloc Edito
-        $editos = $this->getDoctrine()
-        ->getManager()
-        ->getRepository(Edito::class)
-        ->findAll();
+
+        // // récupérer la session
+        // $session = $request->getSession();
+
+        // // on récupère la variable de session
+        // $test = $session->get('test');
+
+        // if (isset($test)) {
+        //     echo 'session ouverte, j\'ai récupéré ma variable : ' . $test;
+        // }
+        // else {
+        //     echo 'j\'initialise ma session et j\y insere une nouvelle variable';
+        //     // j'insere une variable de session de clé test
+        //     $session->set('test', 'coucou');
+        // }
 
         // appel des blocs Services Photo et Site
         $photos = $repo->findServicesPhoto();
@@ -37,8 +48,7 @@ class MainPageController extends AbstractController
         return $this->render('base.html.twig', [
             'photos' => $photos,
             'sites' => $sites,
-            'editos' => $editos,
-            'arguments' => $arguments,
+            'arguments' => $arguments
         ]);
     }
 }

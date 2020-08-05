@@ -6,21 +6,15 @@
 {% block body %}
 <section id="photo" class="section-fix">
   <div class="container">
-        <h1 class="text-center mb-5">Reportage photographique</h1>
+      <h1 class="text-center mb-5">Reportage photographique</h1>
 
       {% for photo in photos %}
           <div class="p-5{% if loop.index is divisible by(2) %} d-flex flex-row-reverse {% else %} row {% endif %}">
-              <div class="col-lg-6">
+              <div class="col-lg-6 my-3">
                   <h2>{{ photo.title }}</h2>
                   <p>{{ photo.content|raw }}</p>
-                  <div class="mt-5">
-                    <p><strong><em>- à partir de {{ photo.price }}€ -</em></strong></p>
-                  </div>
-                  <div class="text-center my-5">
-                      <a class="btn btn-success" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
-                  </div>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6 my-3">
                   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                       <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -44,7 +38,10 @@
                   </div>
               </div>
           </div>
-      {% endfor %} 
+      {% endfor %}
+      <div class="text-center">
+        <a class="btn btn-success btn-lg" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
+      </div> 
 
       {# {% for photo in produit %}
         <div class="row align-items-center m-5">
