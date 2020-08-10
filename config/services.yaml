@@ -12,6 +12,15 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
+    Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler:
+        arguments:
+            - 'mysql:dbname=madstudio; host=127.0.0.1; port=8889'
+            - { db_table: 'sessions', db_username: 'root', db_password: 'root' }
+
+            # you can also use PDO configuration, but requires passing two arguments
+            # - 'mysql:dbname=mydatabase; host=myhost; port=myport'
+            # - { db_username: myuser, db_password: mypassword }
+
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:

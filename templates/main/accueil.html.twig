@@ -1,3 +1,11 @@
+{# {% if app.request.hasPreviousSession %}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %} #}
+
 <section id="accueil" class="section section1">
     <div class="container">
         <div class="row" id="accueil-animate">

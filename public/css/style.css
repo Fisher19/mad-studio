@@ -67,8 +67,6 @@ h1{
 
 }
 
-
-
 @media (max-width: 768px) {
 
     .row-services-reverse{
@@ -263,7 +261,7 @@ h1{
 }
 
 .img-slide-1{
-    background: url(/images/img-1.jpg);
+    background: url("asset{{/images/img-1.jpg}}");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -373,7 +371,6 @@ h1{
     background: transparent;
     border-color: #1b1b1b;
     border-radius: 0;
-    color: white;
 }
 
 .formulaire{
@@ -539,12 +536,12 @@ footer{
 }
 
 hr{
-    background-color: rgb(155, 196, 188);
+    background-color: #9bc4bc;
     width: 60px;
 }
 
 .rs{
-    background-color: rgb(155, 196, 188);
+    background-color: #9bc4bc;
     color: white;
     height: 40px;
     width: 40px;
@@ -557,7 +554,7 @@ hr{
 }
 
 footer a {
-    color: rgb(155, 196, 188);
+    color: #9bc4bc;
 }
 
 footer a:hover{
@@ -568,10 +565,6 @@ footer a:hover{
 .footer-copyright{
     padding: 25px 0;
 }
-
-
-
-
 
 
 /* ADMINISTRATION */

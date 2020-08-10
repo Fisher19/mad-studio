@@ -16,9 +16,6 @@
             <li {% if route_name == "main_page" %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
                 <a class="nav-link bord" href="{{ path('main_page') }}">Accueil</a>
             </li>
-            <li {% if route_name == "about_index" %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                <a class="nav-link bord" href="{{ path('about_index') }}">A propos</a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link bord dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Services
@@ -28,6 +25,9 @@
                 <a class="dropdown-item" href="{{ path('site_index') }}">Site internet</a>
                 <a class="dropdown-item" href="{{ path('pack_index') }}">Full Pack</a>
               </div>
+            </li>
+            <li {% if route_name == "about_index" %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+                <a class="nav-link bord" href="{{ path('about_index') }}">A propos</a>
             </li>
             <li {% if route_name == "contact_index" %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
               <a class="nav-link bord" href="{{ path('contact_index') }}">Contact</a>
