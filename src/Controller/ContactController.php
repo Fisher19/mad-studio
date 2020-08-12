@@ -6,9 +6,9 @@ use App\Form\ContactType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mailer\MailerInterface;
 
 class ContactController extends AbstractController
 {
@@ -20,6 +20,7 @@ class ContactController extends AbstractController
     {
         // création du formulaire de contact
         $contact = new Contact();
+
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
        
@@ -34,7 +35,6 @@ class ContactController extends AbstractController
             ->htmlTemplate('contents/contact/message.html.twig')
             ->context([
                 'lastname' => $contact->getLastname(),
-                'firstname' => $contact->getFirstname(),
                 'compagny' => $contact->getCompagny(),
                 'phone' => $contact->getPhone(),
                 'mail' => $contact->getMail(),

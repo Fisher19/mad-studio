@@ -529,13 +529,24 @@ div#tarteaucitronServices {
     text-decoration: none;
     margin-left: 7px;
 }
+#tarteaucitronPrivacyUrl{
+    margin-left: 15px !important;
+    padding: 0 !important;
+    border-bottom: solid 1px #1b1b1b !important;
+}
 
 #tarteaucitronPrivacyUrl:hover{
     color: #aaaaaa !important;
+    border-bottom: solid 1px #aaaaaa !important;
 }
 
 #tarteaucitronPersonalize:hover{
     background-color: #aaaaaa !important;
+    color: white !important;
+}
+
+#tarteaucitronCloseAlert:hover{
+    background-color: #1b1b1b !important;
     color: white !important;
 }
 
@@ -550,11 +561,6 @@ div#tarteaucitronServices {
     margin-bottom: 3px;
     margin-left: 7px;
     padding: 4px 10px;
-}
-
-#tarteaucitronCloseAlert:hover{
-    background-color: #1b1b1b !important;
-    color: white !important;
 }
 
 #tarteaucitronPercentage {

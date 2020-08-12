@@ -37,12 +37,6 @@ class ContactType extends AbstractType
                 TextType::class,
                 $this->getConfiguration("Nom")
                 )
-                
-            ->add(
-                'firstname',
-                TextType::class,
-                $this->getConfiguration("Prénom")
-                )
 
             ->add(
                 'compagny',
@@ -61,7 +55,7 @@ class ContactType extends AbstractType
                 EmailType::class,
                 $this->getConfiguration("Email")
                 )
-
+                
             ->add(
                 'message',
                 TextareaType::class,[
@@ -69,8 +63,8 @@ class ContactType extends AbstractType
                     'attr' => [
                         'rows' => 4,
                     ]
-                ])
-
+                ])              
+                
             ->add(
                 'checkmessage',
                 CheckboxType::class, [
@@ -85,7 +79,6 @@ class ContactType extends AbstractType
                         'class' => 'btn-submit'
                     ]    
                 ])  
-
         ;
     }
 

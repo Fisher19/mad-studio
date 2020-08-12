@@ -261,42 +261,42 @@ h1{
 }
 
 .img-slide-1{
-    background: url("asset{{/images/img-1.jpg}}");
+    background-image: url(../images/img-1.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .img-slide-2{
-    background: url(/images/img-2.jpg);
+    background-image: url(../images/img-2.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .img-slide-3{
-    background: url(/images/img-3.jpg);
+    background-image: url(../images/img-3.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .img-slide-4{
-    background: url(/images/a.png);
+    background-image: url(../images/a.png);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .img-slide-5{
-    background: url(/images/e.jpg);
+    background-image: url(../images/e.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .img-slide-6{
-    background: url(/images/h.jpg);
+    background-image: url(/images/h.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

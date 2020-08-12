@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Repository\ContactRepository;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -27,12 +26,6 @@ class Contact
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\Length(min=2, max=255, minMessage="Votre prénom ne peut pas faire moins de 2 caratères", maxMessage="Votre prénom ne peut pas faire plus de 255 caractères")
-     */
-    private $firstname;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Length(min=2, max=255, minMessage="Le nom de votre entreprise doit contenir minimum 2 caratères", maxMessage="Le nom de votre entreprise ne peut pas faire plus de 255 caractères")
      */
     private $compagny;
@@ -54,6 +47,7 @@ class Contact
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()
      * @Assert\Length(min=30, minMessage="Votre message ne peut pas faire moins 30 caratères")
      */
     private $message;
@@ -77,18 +71,6 @@ class Contact
     public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
-
-        return $this;
-    }
-
-    public function getFirstname(): ?string
-    {
-        return $this->firstname;
-    }
-
-    public function setFirstname(?string $firstname): self
-    {
-        $this->firstname = $firstname;
 
         return $this;
     }
@@ -152,4 +134,29 @@ class Contact
 
         return $this;
     }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getServices(): ?Category
+    {
+        return $this->services;
+    }
+
+    public function setServices(?Category $services): self
+    {
+        $this->services = $services;
+
+        return $this;
+    }
+
 }
