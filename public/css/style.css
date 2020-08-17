@@ -357,7 +357,7 @@ h1{
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    height: 100%;
+    height: auto;
     text-align: justify;
     color: #1b1b1b;
 }

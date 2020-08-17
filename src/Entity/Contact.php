@@ -58,6 +58,11 @@ class Contact
      */
     private $checkmessage;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="contact")
+     */
+    private $category;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -143,18 +148,6 @@ class Contact
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
-
-        return $this;
-    }
-
-    public function getServices(): ?Category
-    {
-        return $this->services;
-    }
-
-    public function setServices(?Category $services): self
-    {
-        $this->services = $services;
 
         return $this;
     }

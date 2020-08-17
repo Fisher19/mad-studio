@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ServiceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -42,6 +42,7 @@ class Service
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -118,6 +119,11 @@ class Service
         return $this;
     }
 
+    public function __construct()
+    {
+        $this->contact = new ArrayCollection();
+    }
+
     public function setIconFile(File $iconFile = null)
     {
         $this->iconFile = $iconFile;
@@ -166,4 +172,14 @@ class Service
         return $this;
     }
 
+    /**
+     * Converti service_id en string dans le form ServiceType - Administration
+     * 
+     */
+    public function __toString(){
+        // retourne le nom de la catégorie
+        return $this->title;
+        // retourne l'id de la catégorie
+        // return $this->id;
+    }
 }

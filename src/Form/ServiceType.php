@@ -28,6 +28,11 @@ class ServiceType extends AbstractType
             ->add('iconFile', FileType::class, [
                 'required' => false
             ])
+            ->add('images', FileType::class, [
+                'multiple' => true,
+                'mapped' => false,
+                'required' => false
+            ])
 
             // ->add('galleryFile', CollectionType::class, [
             //     'entry_type' => GalleryType::class

@@ -1,0 +1,10 @@
+{% extends "admin/base.html.twig" %}
+
+{% block body %}
+
+    <div class="container p-5">
+        <h4>Créer un nouvel argument</h4>
+        {{ include ('admin/content/arguments/_form.html.twig', {form: form, button: 'Créer'}) }}
+    </div>
+
+{% endblock %}

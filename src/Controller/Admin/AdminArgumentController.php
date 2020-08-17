@@ -45,6 +45,36 @@ class AdminArgumentController extends AbstractController
         ]);
     }
 
+    /**
+     * Permet de créer un nouvel argument
+     * 
+     * @Route("/admin/content/arguments/create", name="admin_arguments_new")
+     *
+     * @return void
+     */
+    public function new(Request $request) {
+        $argument = new Argument();
+        $form = $this->createForm(argumentType::class, $argument);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $this->manager->persist($argument);
+            $this->manager->flush();
+
+            $this->addFlash(
+                'success',
+                "Le argument '{$argument->getTitle()}' a bien été créé !"
+            );
+
+            return $this->redirectToRoute('admin_arguments_index');
+        }
+
+        return $this->render('admin/content/arguments/new.html.twig', [
+            'argument' => $argument,
+            'form' => $form->createView()
+        ]);
+    }
+
 
     /**
      * Permet d'éditer les différents arguments
@@ -75,6 +105,29 @@ class AdminArgumentController extends AbstractController
             'argument' => $argument,
             'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * Permet de supprimer un argument
+     *
+     * @Route("/admin/content/arguments/{id}/delete", name="admin_arguments_delete", methods="DELETE")
+     * 
+     * @param Argument $argument
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return RedirectResponse
+     */
+    public function delete(Argument $argument, Request $request, EntityManagerInterface $manager) {
+        if ($this->isCsrfTokenValid('delete' . $argument->getId(), $request->get('_token'))) {
+            $manager->remove($argument);
+            $manager->flush();
+
+            $this->addFlash(
+                'success',
+                "Le argument '{$argument->getTitle()}' a bien été supprimé !"
+            );
+        }
+        return $this->redirectToRoute('admin_arguments_index');
     }
 
 }
