@@ -38,7 +38,7 @@ class ContactController extends AbstractController
                 'compagny' => $contact->getCompagny(),
                 'phone' => $contact->getPhone(),
                 'mail' => $contact->getMail(),
-                'category' => $contact->getService(),
+                'category' => $contact->getCategory(),
                 'message' => $contact->getMessage()
             ]);
             

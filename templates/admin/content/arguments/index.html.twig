@@ -33,7 +33,15 @@
                         <td class="align-middle px-3">
                             <a href="{{ path('admin_arguments_edit', {id: argument.id}) }}" class="btn btn-dark">
                                 <i class="fas fa-edit my-1"></i>
-                            </a>                       
+                            </a>  
+                            <form method="post" action="{{ path('admin_arguments_delete', {id: argument.id}) }}"
+                            style="display:inline-block" onsubmit="return confirm('Confirmer la suppression')">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ argument.id) }}">
+                                <button class="btn btn-danger my-1">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>                     
                         </td>
                     </tr>
                 {% endfor %}
