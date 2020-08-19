@@ -13,13 +13,7 @@ $(document).ready(function($) {
         scrollHorizontally: false,
         controlArrows: false,
         scrollOverflow: true,
-        paddingTop: '5em'
-    
-        // afterResize : function(width){
-        //     var fullpageContainer = this;
-        //     alert("Le redimensionnement des sections est terminé");
-        // }
-        
+        paddingTop: '5em'        
     });
     
     // if ($(window).width() < 991 ) {

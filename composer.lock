@@ -7365,7 +7365,6 @@
                 "doctrine/orm": "For integration with Doctrine ORM",
                 "doctrine/phpcr-odm": "For integration with Doctrine PHPCR",
                 "knplabs/knp-gaufrette-bundle": "For integration with Gaufrette",
-                "liip/imagine-bundle": "To generate image thumbnails",
                 "ocramius/proxy-manager": "To use lazy services",
                 "oneup/flysystem-bundle": "For integration with Flysystem",
                 "symfony/asset": "To generate better links",

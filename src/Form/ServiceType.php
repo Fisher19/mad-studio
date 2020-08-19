@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\Service;
 use App\Entity\Category;
-use App\Form\GalleryType;
 use Symfony\Component\Form\AbstractType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -33,10 +32,6 @@ class ServiceType extends AbstractType
                 'mapped' => false,
                 'required' => false
             ])
-
-            // ->add('galleryFile', CollectionType::class, [
-            //     'entry_type' => GalleryType::class
-            // ])
         ;
     }
 

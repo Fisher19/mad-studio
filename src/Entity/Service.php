@@ -4,10 +4,12 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ServiceRepository;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * @ORM\Entity(repositoryClass=ServiceRepository::class)
@@ -28,6 +30,11 @@ class Service
     private $title;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $intro;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $content;
@@ -42,7 +49,6 @@ class Service
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
-
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -62,9 +68,14 @@ class Service
     private $updated_at;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\OneToMany(targetEntity="App\Entity\Images", mappedBy="services", orphanRemoval=true, cascade={"persist"})
      */
-    private $intro;
+    private $images;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -79,6 +90,18 @@ class Service
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getIntro(): ?string
+    {
+        return $this->intro;
+    }
+
+    public function setIntro(string $intro): self
+    {
+        $this->intro = $intro;
 
         return $this;
     }
@@ -119,11 +142,6 @@ class Service
         return $this;
     }
 
-    public function __construct()
-    {
-        $this->contact = new ArrayCollection();
-    }
-
     public function setIconFile(File $iconFile = null)
     {
         $this->iconFile = $iconFile;
@@ -160,14 +178,33 @@ class Service
         return $this;
     }
 
-    public function getIntro(): ?string
+      /**
+     * @return Collection|Images[]
+     */
+    public function getImages(): Collection
     {
-        return $this->intro;
+        return $this->images;
     }
 
-    public function setIntro(string $intro): self
+    public function addImage(Images $image): self
     {
-        $this->intro = $intro;
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+            $image->setService($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Images $image): self
+    {
+        if ($this->images->contains($image)) {
+            $this->images->removeElement($image);
+            // set the owning side to null (unless already changed)
+            if ($image->getService() === $this) {
+                $image->setService(null);
+            }
+        }
 
         return $this;
     }

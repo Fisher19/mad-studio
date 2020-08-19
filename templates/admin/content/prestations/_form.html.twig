@@ -1,8 +1,20 @@
 {{ form_start(form) }}
     {{ form_rest(form) }}
+
+    {% if app.request.attributes.get('_route') == 'admin_prestations_edit' %}
+        <h6>Images importées</h6>
+        {% for image in service.images %}
+            <div>
+                <img src="{{ asset('/uploads/' ~ image.name) }}" alt="Image" width="100">
+                <a href="{{ path('prestations_delete_image', {id: image.id}) }}" data-delete data-token="{{ csrf_token('delete' ~ image.id) }}">Supprimer</a>
+            </div>
+        {% endfor %}
+    {% endif %}
+
     <button class="btn btn-primary">{{ button|default('Enregistrer') }}</button> 
     <a href="{{ path('admin_prestations_index')}}" class="btn btn-link">
         <i class="fas fa-arrow-circle-left"></i>
         Retour
     </a>
+
 {{ form_end(form) }}
