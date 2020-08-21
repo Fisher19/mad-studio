@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Service;
+use App\Entity\Images;
+use App\Repository\ImagesRepository;
 use App\Repository\ServiceRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,28 +17,19 @@ class PhotoController extends AbstractController
      * 
      * @return Response
      */
-    public function index(ServiceRepository $repo)
+    public function index(ServiceRepository $repo, ImagesRepository $repogallery)
     {
+
+        // Appel du contenu des tous les services photo
         $photos = $repo->findServicesPhoto();
+        $gallery = $repogallery->findGallery(1);
 
         return $this->render(
             '/contents/prestations/photo.html.twig', 
             [ 
-                'photos' => $photos
+                'photos' => $photos,
+                'gallery' => $gallery
             ]
         );
-
-        // $portrait = $repo->findPortrait();
-        // $produit = $repo->findProduit();
-        // $maitrise = $repo->findSavoirFaire();
-        // $reportage = $repo->findReportageComplet();
-        
-
-        // return $this->render('/contents/prestations/photo.html.twig', [
-        //     'portrait' => $portrait,
-        //     'produit' => $produit,
-        //     'maitrise' => $maitrise,
-        //     'reportage' => $reportage
-        // ]);
     }
 }
