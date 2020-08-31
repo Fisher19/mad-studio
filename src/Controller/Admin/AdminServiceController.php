@@ -35,7 +35,7 @@ class AdminServiceController extends AbstractController
     /**
      * Permet d'afficher les différents services
      * 
-     * @Route("/admin/content/prestations", name="admin_prestations_index")
+     * @Route("/admin/prestations", name="admin_prestations_index")
      * @return Response
      */
     public function index()
@@ -50,7 +50,7 @@ class AdminServiceController extends AbstractController
     /**
      * Permet de créer un nouveau service
      * 
-     * @Route("/admin/content/prestations/create", name="admin_prestations_new")
+     * @Route("/admin/prestations/create", name="admin_prestations_new")
      *
      * @return void
      */
@@ -100,7 +100,7 @@ class AdminServiceController extends AbstractController
     /**
      * Permet d'éditer les différents services
      * 
-     * @Route("/admin/content/prestations/{id}/edit", name="admin_prestations_edit")
+     * @Route("/admin/prestations/{id}/edit", name="admin_prestations_edit")
      * 
      * @param Service $service
      * @param Request $request
@@ -150,7 +150,7 @@ class AdminServiceController extends AbstractController
     /**
      * Permet de supprimer un service
      *
-     * @Route("/admin/content/prestations/{id}/delete", name="admin_prestations_delete", methods="DELETE")
+     * @Route("/admin/prestations/{id}/delete", name="admin_prestations_delete", methods="DELETE")
      * 
      * @param Service $service
      * @param Request $request

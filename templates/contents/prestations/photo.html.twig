@@ -6,41 +6,36 @@
 {% block body %}
 <section id="photo" class="section-fix">
   <div class="container">
-      <h1 class="text-center mb-5">Reportage photographique</h1>
-
-      {% for photo in photos %}
-          <div class="p-5{% if loop.index is divisible by(2) %} d-flex flex-row-reverse {% else %} row {% endif %}">
-              <div class="col-lg-6 my-3">
-                  <h2>{{ photo.title }}</h2>
-                  <p>{{ photo.content|raw }}</p>
-              </div>
-              <div class="col-lg-6 my-3">
-                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                      <div class="carousel-inner">
-                      {% for images in gallery %}                       
-                        {% if photo.id == images.service.id %}  
-                        {% set first = images.service.id %}          
-                          <div class="carousel-item {% if loop.index0 == first %} active {% endif %}">
-                            <img class="d-block w-100" src="{{ asset('/uploads/' ~ images.name) }}" alt="First slide">
-                        </div>
-                        {% endif %}
-                      {% endfor %}
+    <div class="title-content">
+      <hr class="hr-left">
+      <h1>Reportage photographique</h1>
+      <hr class="hr-right">
+    </div>
+    {% for photo in photos %}
+        <div class="p-5 mb-5 mx-auto {% if loop.index is divisible by(2) %} d-flex flex-row-reverse {% else %} row {% endif %}">
+            <div class="col-lg-6">
+                <h2>{{ photo.title }}</h2>
+                <p>{{ photo.content|raw }}</p>
+                <div class="text-center my-5">
+                  <a class="btn btn-secondaire" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
+                </div>
+            </div>
+            <div class="col-lg-6 my-auto">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                    {% for images in gallery %}                       
+                      {% if photo.id == images.service.id %}  
+                      {% set first = images.service.id %}          
+                        <div class="carousel-item {% if loop.index == first %} active {% endif %}">
+                          <img class="d-block w-100" src="{{ asset('/uploads/' ~ images.name) }}" alt="First slide">
                       </div>
-                      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                      </a>
-                  </div>
-              </div>
-          </div>
-      {% endfor %}
-      <div class="text-center">
-        <a class="btn btn-success btn-lg" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
-      </div> 
+                      {% endif %}
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>  
+    {% endfor %}
       
   </div>
 </section>

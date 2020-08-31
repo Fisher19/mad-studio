@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AboutController extends AbstractController {
 
     /**
-     * @Route("/contents/a-propos", name="about_index")
+     * @Route("/a-propos", name="about_index")
      * 
      * @return Response
      */

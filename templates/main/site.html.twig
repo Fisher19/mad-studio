@@ -1,11 +1,11 @@
 <section class="section section4">
     <div class="container-fluid">
-        <div class="row row-services">     
+        <div class="row row-services row-services-reverse">     
 
             {# début galerie #}
             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">
 
-                <div id="carousel-main-site" class="carousel slide carousel" data-ride="carousel">    
+                <div id="carousel-main-site" class="carousel slide carousel" data-interval="7000" data-ride="carousel">    
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-main-site" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-main-site" data-slide-to="1"></li>
@@ -41,7 +41,7 @@
                         <div class="carousel-inner">
                         {% for site in sites %}
                             <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-                                <div class="row bloc-services test">
+                                <div class="row bloc-services animation-icon">
                                     <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
                                         {% if site.icon %}
                                         <span><img src="{{ vich_uploader_asset(site, 'iconFile') }}" alt="" class="icon-service"></span>
@@ -56,7 +56,7 @@
                         </div>
 
                         <div class="row arrow-control-services">
-                            <a class="carousel-control-left" href="#carousel-services-2" role="button" data-slide="prev">
+                            <a class="carousel-control-left mr-1" href="#carousel-services-2" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Précédent</span>
                             </a>
@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="text-center mt-5">
-                        <a class="btn btn-success" href="{{ path('site_index') }}" role="button">Découvrir</a>
+                        <a class="btn btn-principal" href="{{ path('site_index') }}" role="button">En savoir +</a>
                     </div>
 
                 </div>

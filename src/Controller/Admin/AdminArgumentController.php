@@ -33,7 +33,7 @@ class AdminArgumentController extends AbstractController
     /**
      * Permet d'afficher les différents arguments
      * 
-     * @Route("/admin/content/arguments", name="admin_arguments_index")
+     * @Route("/admin/arguments", name="admin_arguments_index")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index()

@@ -84,15 +84,6 @@ class ContactType extends AbstractType
                 CheckboxType::class, [
                     'label' => 'Je ne suis pas un robot !'
                 ])
-
-            ->add(
-                'submit',
-                SubmitType::class, [
-                    'label' => 'Envoyer',
-                    'attr' => [
-                        'class' => 'btn-submit'
-                    ]    
-                ])  
         ;
     }
 

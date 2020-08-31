@@ -32,6 +32,21 @@ class About
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $cursus;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $problematique;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $conclusion;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +84,42 @@ class About
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getCursus(): ?string
+    {
+        return $this->cursus;
+    }
+
+    public function setCursus(string $cursus): self
+    {
+        $this->cursus = $cursus;
+
+        return $this;
+    }
+
+    public function getProblematique(): ?string
+    {
+        return $this->problematique;
+    }
+
+    public function setProblematique(string $problematique): self
+    {
+        $this->problematique = $problematique;
+
+        return $this;
+    }
+
+    public function getConclusion(): ?string
+    {
+        return $this->conclusion;
+    }
+
+    public function setConclusion(string $conclusion): self
+    {
+        $this->conclusion = $conclusion;
 
         return $this;
     }

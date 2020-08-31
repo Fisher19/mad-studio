@@ -7,16 +7,27 @@
 <section id="about" class="section-fix">
     {% for about in about %}
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mb-5">
-                <h1 class="text-center">{{ about.title }}</h1>
-            </div>
-
-            <div class="col-lg-6 m-auto col-img-fix">
-                <img src="{{ about.image }}" alt="Autoportrait" class="img-fluid">
-            </div>
-            <div class="col-lg-6 my-auto">
+        <div class="title-content">
+          <hr class="hr-left">
+          <h1>{{about.title}}</h1>
+          <hr class="hr-right">
+        </div>
+        <div class="row row-about-no-reverse mb-5">
+            <div class="col-lg-6 pl-lg-5">
                 <p>{{ about.presentation|raw }}</p>
+            </div>
+            <div class="col-lg-6 text-center my-auto">
+                <div class="bloc-decale"></div>
+                <img src="{{ about.image }}" alt="Autoportrait" class="img-fluid autoportrait">
+            </div>
+        </div>
+        <div class="row row-about-reverse mt-5">
+            <div class="col-lg-4 mx-auto">
+                <p>{{ about.conclusion|raw }}</p>
+            </div>
+            <div class="col-lg-8 pl-lg-5">
+                <p>{{ about.cursus|raw }}</p>
+                <p>{{ about.problematique|raw }}</p>
             </div>
         </div>
     </div>

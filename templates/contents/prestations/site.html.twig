@@ -5,46 +5,46 @@
 {% block body %}
 <section id="site" class="section-fix">
   <div class="container">
+    <div class="title-content">
+      <hr class="hr-left">
+      <h1>Création de site</h1>
+      <hr class="hr-right">
+    </div>
 
-    <div id="carousel-content-site" class="carousel slide carousel-fade" data-ride="carousel">
-
+    <div id="carousel-content-site" class="carousel slide carousel" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carousel-content-site" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-content-site" data-slide-to="1"></li>
         <li data-target="#carousel-content-site" data-slide-to="2"></li>
         <li data-target="#carousel-content-site" data-slide-to="3"></li>
       </ol>
-
       <div class="carousel-inner" role="listbox">
         {% for site in sites %}
-        <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-
-          <div class="view">
-            <img class="d-block w-100" src="/images/n.jpg"
-              alt="First slide">
-            <div class="mask rgba-black-light"></div>
-          </div>
-          <div class="carousel-caption mb-3">
-            <h3 class="h3-responsive">{{ site.title }}</h3>
-            <p>{{ site.content|raw }}</p>
+        <div class="carousel-item{% if loop.index0 == 0 %} active {% endif %}">
+          <div class="row px-5">
+            <div class="col-lg-12 px-5 text-center">
+              <h3 class="">{{ site.title }}</h3>
+              <p>{{ site.content|raw }}</p>
+            </div>
           </div>
         </div>
       {% endfor %} 
-      </div>
+
+    </div>
 
       <a class="carousel-control-prev" href="#carousel-content-site" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <i class="fas fa-arrow-alt-circle-left arrow-control-site"></i>
         <span class="sr-only">Précédent</span>
       </a>
       <a class="carousel-control-next" href="#carousel-content-site" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <i class="fas fa-arrow-alt-circle-right arrow-control-site"></i>
         <span class="sr-only">Suivant</span>
       </a>
 
     </div>
 
     <div class="text-center">
-      <a class="btn btn-success btn-lg" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
+      <a class="btn btn-secondaire mt-5" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
     </div> 
 
     {# {% for site in ecommerce %}
@@ -77,7 +77,7 @@
                 <p>{{ site.content }}</p>
                 <span><em> A partir de {{ site.price }}€</em></span>
                 <div class="mt-5">
-                    <a class="btn btn-success" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
+                    <a class="btn btn-principal" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
                 <p>{{ site.content }}</p>
                 <span><em> A partir de {{ site.price }}€</em></span>
                 <div class="mt-5">
-                    <a class="btn btn-success" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
+                    <a class="btn btn-principal" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
                 </div>
             </div>
             <div class="col-6">
@@ -149,7 +149,7 @@
                 <p>{{ site.content }}</p>
                 <span><em> A partir de {{ site.price }}€</em></span>
                 <div class="mt-5">
-                    <a class="btn btn-success" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
+                    <a class="btn btn-principal" href="{{ path('contact_index') }}" role="button">Demander un devis</a>
                 </div>
             </div>
         </div>

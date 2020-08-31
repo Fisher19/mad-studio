@@ -33,7 +33,7 @@ class AdminAboutController extends AbstractController
     /**
      * Permet d'afficher A propos
      * 
-     * @Route("/admin/content/about", name="admin_about_index")
+     * @Route("/admin/about", name="admin_about_index")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index()

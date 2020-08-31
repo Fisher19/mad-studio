@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-5">
-            <h2 class="mb-3"><i class="fas fa-paper-plane"></i> Contactez-moi</h2>
+            <h1 class="mb-3"><i class="fas fa-paper-plane"></i> Contact</h1>
 
             {% for label, messages in app.flashes %}
             <div class="alert alert-{{ label }} d-inline-flex">
@@ -31,7 +31,7 @@
                     <a href="mailto:contact@madstudio.fr">contact@madstudio.fr</a>
                 </div>
                 <div class="mt-5">
-                    <img src="/images/i-2.jpg" alt="" class="img-fluid">
+                    <img src="/images/img-contact.jpg" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                 </div>
                 
                 <div class="text-center mt-3">
-                    {{ form_widget(form.submit) }}
+                    <button type="submit" class="btn btn-submit">Envoyer</button>
                 </div>
 
             </div>

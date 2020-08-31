@@ -15,6 +15,9 @@ class AboutType extends AbstractType
         $builder
             ->add('title')
             ->add('presentation', CKEditorType::class)
+            ->add('cursus', CKEditorType::class)
+            ->add('problematique', CKEditorType::class)
+            ->add('conclusion', CKEditorType::class)
         ;
     }
 

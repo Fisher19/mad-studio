@@ -1,6 +1,6 @@
 <section class="section section3">
     <div class="container-fluid">
-        <div class="row row-services row-services-reverse">
+        <div class="row row-services">
             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">        
 
                 <div class="container-services">
@@ -14,7 +14,7 @@
                         <div class="carousel-inner">
                         {% for photo in photos %}
                             <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-                                <div class="row bloc-services test">
+                                <div class="row bloc-services animation-icon">
                                     <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
                                         {% if photo.icon %}
                                         <span><img src="{{ vich_uploader_asset(photo, 'iconFile') }}" alt="" class="icon-service"></span>
@@ -29,7 +29,7 @@
 
 
                         <div class="row arrow-control-services">
-                            <a class="carousel-control left align-self-center" href="#carousel-services" role="button" data-slide="prev">
+                            <a class="carousel-control left align-self-center mr-1" href="#carousel-services" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Précédent</span>
                             </a>
@@ -41,7 +41,7 @@
                     </div> 
 
                     <div class="text-center mt-5">
-                        <a class="btn btn-success" href="{{ path('photo_index') }}" role="button">Découvrir</a>
+                        <a class="btn btn-principal" href="{{ path('photo_index') }}" role="button">En savoir +</a>
                     </div>
 
                 </div>
@@ -52,7 +52,7 @@
             {# début galerie droite #}
             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">
 
-                <div id="carousel-main-photo" class="carousel slide carousel" data-ride="carousel">
+                <div id="carousel-main-photo" class="carousel slide carousel" data-interval="7000" data-ride="carousel">
 
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-main-photo" data-slide-to="0" class="active"></li>
