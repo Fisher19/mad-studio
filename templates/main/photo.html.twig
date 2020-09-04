@@ -1,66 +1,55 @@
-<section class="section section3">
+<section id="main-photo" class="section section3 m-0 p-0">
     <div class="container-fluid">
-        <div class="row row-services">
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">        
+        <div class="row">
 
-                <div class="container-services">
-                    <h1>Photographie</h1>
-                    <p class="lead">Des images professionnelles de qualité <br> pour vous démarquer. </p>
-                    <p>
-                        Afin de vous aider dans la communication de votre entreprise, je réalise les visuels qui viendront alimenter votre site internet, vos réseaux sociaux et supports divers.
-                    </p>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 px-5 align-self-center bloc-services">
+                <h1>Photographie</h1>
+                <p class="lead">Des images professionnelles de qualité pour vous démarquer.</p>
+                <p>
+                    Afin de vous aider dans la communication de votre entreprise, je réalise les visuels qui viendront alimenter votre site internet, vos réseaux sociaux et supports divers.
+                </p>
 
-                    <div id="carousel-services" class="carousel" data-interval="5000" data-ride="carousel">
-                        <div class="carousel-inner">
-                        {% for photo in photos %}
-                            <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-                                <div class="row bloc-services animation-icon">
-                                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                        {% if photo.icon %}
-                                        <span><img src="{{ vich_uploader_asset(photo, 'iconFile') }}" alt="" class="icon-service"></span>
-                                        {% endif %}
-                                        <h2>{{ photo.title }}</h2>
-                                        <p>{{ photo.intro|raw }}</p>
-                                    </div>
-                                </div>
-                            </div>                       
-                        {% endfor %}
+                <div id="carousel-photo" class="carousel slide mt-5" data-ride="carousel" data-interval="6000">
+
+                    <div class="carousel-inner carousel-services">
+                    {% for photo in photos %}
+                        <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+                        {% if photo.icon %}
+                            <span><img src="{{ vich_uploader_asset(photo, 'iconFile') }}" alt="" class="icon-service"></span>
+                        {% endif %}
+                            <h2 class="mb-0">{{ photo.title }}</h2>
+                            <p>{{ photo.intro|raw }}</p>
                         </div>
-
-
-                        <div class="row arrow-control-services">
-                            <a class="carousel-control left align-self-center mr-1" href="#carousel-services" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Précédent</span>
-                            </a>
-                            <a class="carousel-control right" href="#carousel-services" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Suivant</span>
-                            </a>
-                        </div>
-                    </div> 
-
-                    <div class="text-center mt-5">
-                        <a class="btn btn-principal" href="{{ path('photo_index') }}" role="button">En savoir +</a>
+                    {% endfor %}
                     </div>
 
+                    <div class="row arrow-control-services">
+                        <a class="carousel-control left align-self-center mr-1" href="#carousel-photo" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Précédent</span>
+                        </a>
+                        <a class="carousel-control right" href="#carousel-photo" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Suivant</span>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="text-center my-5">
+                    <a class="btn btn-secondaire" href="{{ path('photo_index') }}" role="button">En savoir +</a>
                 </div>
 
             </div>
 
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 m-0 p-0">
 
-            {# début galerie droite #}
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">
-
-                <div id="carousel-main-photo" class="carousel slide carousel" data-interval="7000" data-ride="carousel">
-
+                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="8000">
                     <ol class="carousel-indicators">
-                        <li data-target="#carousel-main-photo" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-main-photo" data-slide-to="1"></li>
-                        <li data-target="#carousel-main-photo" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                     </ol>
-
-                    <div class="carousel-inner" role="listbox">
+                    <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div id="img-slide-1" class="img-slide"></div>
                         </div>
@@ -71,11 +60,10 @@
                             <div id="img-slide-3" class="img-slide"></div>
                         </div>
                     </div>
-
+    
                 </div>
-            </div>
-            {# fin galerie droite #}
 
+            </div>
         </div>
     </div>
 </section>

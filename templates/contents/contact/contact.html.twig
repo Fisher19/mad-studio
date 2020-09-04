@@ -6,9 +6,9 @@
 
 {% block body %}
 
-<section id="contact">
+<section id="contact" class="pb-5">
 
-<div class="container">
+<div class="container contact-container">
     <div class="row">
         <div class="col-lg-5">
             <h1 class="mb-3"><i class="fas fa-paper-plane"></i> Contact</h1>
@@ -36,8 +36,8 @@
             </div>
         </div>
 
-        <div class="col-lg-7">
-            <div class="formulaire">
+        <div class="col-lg-7 px-md-5">
+            <div class="formulaire p-5">
                 {{ form_start(form) }}
 
                 <div class="form-row">
@@ -78,7 +78,7 @@
                 </div>
                 
                 <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-submit">Envoyer</button>
+                    <button type="submit" class="btn btn-primaire">Envoyer</button>
                 </div>
 
             </div>
@@ -92,7 +92,7 @@
 
 </section>
 
-
+{% include "/partials/footer.html.twig" %}
 
 {% endblock %}
 

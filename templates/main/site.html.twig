@@ -1,18 +1,16 @@
-<section class="section section4">
+<section id="main-site" class="section section4 m-0 p-0">
     <div class="container-fluid">
-        <div class="row row-services row-services-reverse">     
+        <div class="row row-services-reverse">
 
-            {# début galerie #}
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 m-0 p-0">
 
-                <div id="carousel-main-site" class="carousel slide carousel" data-interval="7000" data-ride="carousel">    
+                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="8000">
                     <ol class="carousel-indicators">
-                        <li data-target="#carousel-main-site" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-main-site" data-slide-to="1"></li>
-                        <li data-target="#carousel-main-site" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                     </ol>
-
-                    <div class="carousel-inner" role="listbox">
+                    <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div id="img-slide-4" class="img-slide"></div>
                         </div>
@@ -23,57 +21,50 @@
                             <div id="img-slide-6" class="img-slide"></div>
                         </div>
                     </div>
-                </div>
-            </div>
-            {# fin galerie #}
-
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 m-0">
-                
-                <div class="container-services">
-        
-                    <h1>Création de site</h1>
-                    <p class="lead">Des solutions clef en main pour vous faire connaître sur internet.</p>
-                    <p>
-                    Nous travaillons ensemble pour réaliser un site à l'image de votre entreprise.
-                    </p>
-
-                    <div id="carousel-services-2" class="carousel" data-interval="5000" data-ride="carousel">
-                        <div class="carousel-inner">
-                        {% for site in sites %}
-                            <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-                                <div class="row bloc-services animation-icon">
-                                    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                        {% if site.icon %}
-                                        <span><img src="{{ vich_uploader_asset(site, 'iconFile') }}" alt="" class="icon-service"></span>
-                                        {% endif %}
-                                        <h2>{{ site.title }}</h2>
-                                        <p>{{ site.intro|raw }}</p>
-                                        {# <span><em> A partir de {{ site.price }}€</em></span> #}
-                                    </div>
-                                </div>
-                            </div>                       
-                        {% endfor %}
-                        </div>
-
-                        <div class="row arrow-control-services">
-                            <a class="carousel-control-left mr-1" href="#carousel-services-2" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Précédent</span>
-                            </a>
-                            <a class="carousel-control-right" href="#carousel-services-2" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Suivant</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-5">
-                        <a class="btn btn-principal" href="{{ path('site_index') }}" role="button">En savoir +</a>
-                    </div>
-
-                </div>
     
-            </div>  
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 px-5 align-self-center bloc-services">
+                <h1>Création de site</h1>
+                <p class="lead">Des solutions clef en main pour vous faire connaître sur internet.</p>
+                <p>
+                    Nous travaillons ensemble pour réaliser un site à l'image de votre entreprise.
+                </p>
+
+                <div id="carousel-site" class="carousel slide mt-5" data-ride="carousel" data-interval="6000">
+
+                    <div class="carousel-inner carousel-services">
+                    {% for site in sites %}
+                        <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+                        {% if site.icon %}
+                            <span><img src="{{ vich_uploader_asset(site, 'iconFile') }}" alt="" class="icon-service"></span>
+                        {% endif %}
+                            <h2 class="mb-0">{{ site.title }}</h2>
+                            <p>{{ site.intro|raw }}</p>
+                        </div>
+                    {% endfor %}
+                    </div>
+
+                    <div class="row arrow-control-services">
+                        <a class="carousel-control left align-self-center mr-1" href="#carousel-site" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Précédent</span>
+                        </a>
+                        <a class="carousel-control right" href="#carousel-site" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Suivant</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="text-center my-5">
+                    <a class="btn btn-secondaire" href="{{ path('photo_index') }}" role="button">En savoir +</a>
+                </div>
+                
+            </div>
 
         </div>
     </div>

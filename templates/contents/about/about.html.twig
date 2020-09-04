@@ -4,34 +4,39 @@
 
 {% block body %}
 
-<section id="about" class="section-fix">
+<section id="about" class="pb-5">
     {% for about in about %}
+    <div class="container about-container text-center mb-5">
+      <hr class="hr-left">
+      <h1>{{about.title}}</h1>
+      <hr class="hr-right">
+    </div>
     <div class="container">
-        <div class="title-content">
-          <hr class="hr-left">
-          <h1>{{about.title}}</h1>
-          <hr class="hr-right">
+      <div class="row">
+        <div class="col-lg-6 my-auto">
+          <p class="pr-md-5">{{ about.presentation|raw }}</p>
         </div>
-        <div class="row row-about-no-reverse mb-5">
-            <div class="col-lg-6 pl-lg-5">
-                <p>{{ about.presentation|raw }}</p>
-            </div>
-            <div class="col-lg-6 text-center my-auto">
-                <div class="bloc-decale"></div>
-                <img src="{{ about.image }}" alt="Autoportrait" class="img-fluid autoportrait">
-            </div>
+        <div class="col-lg-6 my-auto">
+            <div class="bloc-decale"></div>
+            <img src="{{ about.image }}" alt="@James-Bold" class="img-fluid autoportrait">
         </div>
-        <div class="row row-about-reverse mt-5">
-            <div class="col-lg-4 mx-auto">
-                <p>{{ about.conclusion|raw }}</p>
-            </div>
-            <div class="col-lg-8 pl-lg-5">
-                <p>{{ about.cursus|raw }}</p>
-                <p>{{ about.problematique|raw }}</p>
-            </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-md-5">
+          <div class="col-12 col-lg-4 text-center order-1 order-lg-0 my-auto encart">
+            <p class="lead">{{ about.conclusion|raw }}</p>
+          </div>
+          <div class="col-12 col-lg-8 pl-md-5 pr-md-0">
+            <p>{{ about.cursus|raw }}</p>
+            <p>{{ about.problematique|raw }}</p>
+          </div>
         </div>
     </div>
     {% endfor %}
 </section>
+
+{% include "/partials/footer.html.twig" %}
    
 {% endblock %}

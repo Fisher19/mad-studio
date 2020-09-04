@@ -1,24 +1,25 @@
 <section id="arguments" class="section section5">
-	<div class="container my-5 p-3">
-    	<div class="title-content mt-5">
-      		<hr class="hr-left">
-      		<h1>Pourquoi choisir MAD STUDIO ?</h1>
-      		<hr class="hr-right">
-    	</div>
-    	<div class="row">
+	<div class="container">
+		<hr class="hr-left">
+		<h1 class="text-center">Pourquoi choisir MAD STUDIO ?</h1>
+		<hr class="hr-right">
+	</div>
+	<div class="container pt-5">
+		<div class="row">	
 		{% for argument in arguments %}
-      		<div class="col-lg-6 col-md-12 mt-3 px-5">
-        		<h3><i class="fas fa-check"></i> {{ argument.title }}</h3>
-        		<p>{{ argument.content|raw }}</p>
-      		</div>
+			<div class="col-lg-6 d-flex align-items-start mb-3">
+				<div>
+				  <h5><i class="fas fa-check"></i>  {{ argument.title }}</h5>
+				  <p>{{ argument.content|raw }}</p>
+				</div>
+			</div>
 		{% endfor %}
 		</div>
-		<div id="lien-about">				
-			<a href="{{ path('about_index') }}" role="button" class="btn btn-secondaire">
-			Découvrez l'histoire de MAD STUDIO
-			<i class="fas fa-arrow-right ml-2"></i>
-			</a>
-        </div>
-		</div>
+	</div>
+	<div class="container d-flex">
+		<a href="{{ path('about_index') }}" role="button" class="btn btn-primaire mx-auto">Découvrez l'histoire de MAD STUDIO
+		<i class="fas fa-arrow-right ml-2"></i>
+		</a>
+	</div>
 </section>
 

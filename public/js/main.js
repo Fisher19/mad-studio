@@ -1,7 +1,7 @@
 $(document).ready(function($) {
     // icon burger
     $('.navbar-toggler').on('click', function () {
-        $('.animated-icon1').toggleClass('open');
+        $('.animated-burger').toggleClass('open');
     });
 
     $('#fullpage').fullpage({
@@ -11,12 +11,15 @@ $(document).ready(function($) {
         navigation: true,
 	    navigationPosition: 'right',
         scrollHorizontally: false,
+        keyboardScrolling: true,
         controlArrows: false,
         scrollOverflow: true,
-        paddingTop: '5em'        
+        responsiveWidth: 990,
     });    
 
 });
+
+
 
 
 

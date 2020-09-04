@@ -1,80 +1,65 @@
 {% set route_name = app.request.attributes.get('_route') %}
-<footer class="section fp-auto-height pt-0" id="footer">
-
-    <div class="container text-center text-md-left pt-2">
-
-        <div class="row mt-5">  
-
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2"> 
-
-                <h6 class="text-uppercase font-weight-bold">MAD STUDIO</h6>
-                <hr class="mb-4 mt-0 d-inline-block mx-auto">
-                <p>Retrouvez-moi sur les réseaux sociaux !
-                </p> 
-
-                <div class="mb-4">
-                    <button class="btn rs mr-3">
-                        <i class="fab fa-facebook-f"> </i>
-                    </button>
-                    <button class="btn rs mr-3">
-                        <i class="fab fa-linkedin-in"> </i>
-                    </button>
-                    <button class="btn rs mr-3">
-                        <i class="fab fa-instagram"> </i>
-                    </button>        
-                </div> 
-
-            </div>
-
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2"> 
-                <h6 class="text-uppercase font-weight-bold">SERVICES</h6>
-                <hr class="mb-4 mt-0 d-inline-block mx-auto">
-                <p>
-                    <a href="{{ path('photo_index') }}">Photographie</a>
-                </p>
-                <p>
-                    <a href="{{ path('site_index') }}">Site internet</a>
-                </p>  
-            </div>
-
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-2"> 
-                <h6 class="text-uppercase font-weight-bold">LIENS</h6>
-                <hr class="mb-4 mt-0 d-inline-block mx-auto">
-                <p>
-                    <a href="{{ path('mentions_index') }}" target="_blank">Mentions Légales</a>
-                </p>   
-            </div>
-
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2"> 
-                <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                <hr class="mb-4 mt-0 d-inline-block mx-auto">
-                <p>
-                  <i class="fas fa-home mr-3"></i>
-                  <a href="https://www.google.fr/maps/place/Nice/@43.7032931,7.1826055,12z/data=!3m1!4b1!4m5!3m4!1s0x12cdd0106a852d31:0x40819a5fd979a70!8m2!3d43.7101728!4d7.2619532" target="_blank" class="coordonnées">
-                    06000 Nice - FRANCE
-                  </a> 
-                </p>
-                <p>
-                  <i class="fas fa-envelope mr-3"></i>
-                  <a href="mailto:contact@madstudio.fr" class="coordonnées">contact@madstudio.fr</a>
-                </p>
-                <p>
-                  <i class="fas fa-phone mr-3"></i> <a href="tel:+33659826777" class="coordonnées">06 59 82 67 77</a>
-                </p>    
-            </div>
-
-        </div>
+<footer class="section section6 fp-auto-height py-4">
+  <div class="container text-center text-lg-left">
+    <div class="row d-flex justify-content-between flex-column flex-lg-row align-items-center align-items-lg-start">
+      <div class="d-flex flex-column col-10 col-lg-5 pl-0">
+        <h5>MAD STUDIO</h5>
+        <p>Retrouvez-moi sur les réseaux sociaux !</p>
+        <ul class="list-inline d-flex mb-3 justify-content-center justify-content-lg-start">
+            {# <button class="btn rs mx-1">
+                <i class="fab fa-facebook-f"> </i>
+            </button> #}
+            <a class="btn rs mx-1" href="https://www.linkedin.com/in/marie-amandine-delalondre/" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a class="btn rs mx-1" href="https://www.instagram.com/madstudio_pro/?hl=fr" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a> 
+        </ul>
+      </div>
+      <div>
+        <h6>Services</h6>
+        <ul class="list-inline ml-0">
+          <li class="py-1"><a href="{{ path('photo_index') }}">Photographie</a></li>
+          <li class="py-1"><a href="{{ path('site_index') }}">Site internet</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Liens</h6>
+        <ul class="list-inline ml-">
+          <li class="py-1"><a href="{{ path('mentions_index') }}">Mentions Légales</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Contact</h6>
+        <ul class="list-inline ml-0">
+            <li class="py-1">
+                <i class="fas fa-home mr-1"></i>
+                <a href="https://www.google.fr/maps/place/Nice/@43.7032931,7.1826055,12z/data=!3m1!4b1!4m5!3m4!1s0x12cdd0106a852d31:0x40819a5fd979a70!8m2!3d43.7101728!4d7.2619532" target="_blank" class="coordonnées">
+                  06000 Nice - FRANCE
+                </a>
+            </li>
+            <li class="py-1">
+                <i class="fas fa-envelope mr-1"></i>
+                <a href="mailto:contact@madstudio.fr" class="coordonnées">contact@madstudio.fr</a>
+            </li>
+            <li class="py-1">
+                <i class="fas fa-phone mr-1"></i>
+                <a href="tel:+33659826777" class="coordonnées">06 59 82 67 77</a>
+            </li>
+        </ul>
+      </div>
 
     </div>
-
-    <div class="footer-copyright text-center">
+    <div class="flex-column flex-sm-row align-items-center justify-content-sm-between">
+        <p class="mb-0 small text-muted text-center">
         © Copyright 2020
         <a href="https://madstudio.fr/"> madstudio.fr</a>
         - Tous droits réservés
+        </p>
     </div>
-
+  </div>
 </footer>
-
 
 
 
