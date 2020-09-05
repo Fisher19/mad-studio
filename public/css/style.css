@@ -12,7 +12,6 @@ html, body{
 }
 
 @media screen and (min-width: 359px){
-
     #dev{
         font-size: 1.49rem !important;
     }
@@ -38,6 +37,10 @@ html, body{
 
     .lead{
         font-size: 1.2rem;
+    }
+
+    .photo-container, .site-container, .contact-container, .about-container, .mentions-container{
+        padding-top: 120px !important;
     }
 
     .navbar-nav .nav-item {
@@ -150,7 +153,7 @@ hr{
 }
 
 .btn-secondaire:hover, .rs:hover{
-    background-color: rgb(84, 110, 105);
+    background-color: rgb(84, 110, 105) !important;
     color: white;
 }
 
